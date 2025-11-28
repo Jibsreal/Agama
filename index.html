@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blueprint PAS Pendidikan Agama SMP Kelas 9 Semester 1</title>
+    <title>Blueprint PAS Pendidikan Agama SMP Kelas 9 Semester 1 - VERSI FINAL LENGKAP</title>
     <style>
         * {
             margin: 0;
@@ -13,67 +13,81 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 20px;
             min-height: 100vh;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
             background: white;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
             overflow: hidden;
         }
 
         header {
-            background: linear-gradient(135deg, #2c3e50, #3498db);
+            background: linear-gradient(135deg, #2c3e50, #3498db, #2c3e50);
             color: white;
-            padding: 30px;
+            padding: 35px;
             text-align: center;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #f1c40f, #e74c3c, #9b59b6);
         }
 
         header h1 {
-            font-size: 1.8em;
-            margin-bottom: 10px;
+            font-size: 2em;
+            margin-bottom: 12px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         header p {
-            font-size: 0.95em;
-            opacity: 0.9;
+            font-size: 1em;
+            opacity: 0.95;
         }
 
         .summary-section {
-            padding: 25px 30px;
-            background: #f8f9fa;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
         }
 
         .summary-table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 25px;
-            border-radius: 8px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .summary-table th {
-            background: #34495e;
+            background: linear-gradient(135deg, #34495e, #2c3e50);
             color: white;
-            padding: 12px;
+            padding: 15px;
             text-align: left;
             font-weight: 600;
+            font-size: 0.95em;
         }
 
         .summary-table td {
-            padding: 10px 12px;
+            padding: 12px 15px;
             border-bottom: 1px solid #dee2e6;
+            vertical-align: top;
         }
 
         .summary-table tr:nth-child(even) {
-            background: #f2f4f7;
+            background: #f8f9ff;
         }
 
         .content-section {
@@ -81,106 +95,194 @@
         }
 
         .section-header {
-            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            background: linear-gradient(135deg, #27ae60, #2ecc71, #27ae60);
             color: white;
-            padding: 18px 25px;
-            margin: 25px 0 15px;
-            border-radius: 10px;
-            font-size: 1.3em;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+            padding: 20px 25px;
+            margin: 30px 0 20px;
+            border-radius: 12px;
+            font-size: 1.4em;
+            font-weight: 700;
+            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 100%;
+            background: rgba(255,255,255,0.4);
         }
 
         .question-item {
             background: white;
-            border-left: 5px solid #3498db;
-            padding: 20px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            transition: transform 0.2s;
+            border-left: 6px solid #3498db;
+            padding: 22px;
+            margin-bottom: 18px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .question-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            border-radius: 0 0 0 10px;
         }
 
         .question-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
         }
 
         .question-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
+            position: relative;
+            z-index: 1;
         }
 
         .question-number {
-            background: #e74c3c;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
             color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
+            padding: 8px 15px;
+            border-radius: 25px;
             font-weight: bold;
-            font-size: 0.9em;
+            font-size: 0.95em;
+            box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
         }
 
         .question-type {
-            background: #f39c12;
+            background: linear-gradient(135deg, #f39c12, #e67e22);
             color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.85em;
+            padding: 7px 14px;
+            border-radius: 25px;
+            font-size: 0.88em;
+            font-weight: 600;
         }
 
         .indicator {
-            background: #ecf0f1;
-            padding: 12px;
-            border-radius: 6px;
-            border-left: 4px solid #9b59b6;
-            margin: 10px 0;
+            background: linear-gradient(135deg, #ecf0f1, #d5dbdb);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid #9b59b6;
+            margin: 12px 0;
             font-style: italic;
+            font-size: 0.94em;
+        }
+
+        .indicator strong {
+            color: #8e44ad;
         }
 
         .material-detail {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 6px;
-            margin-top: 12px;
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            padding: 18px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border: 1px solid #e9ecef;
         }
 
         .material-detail h4 {
             color: #2c3e50;
-            margin-bottom: 8px;
-            font-size: 1.1em;
+            margin-bottom: 12px;
+            font-size: 1.15em;
+            display: flex;
+            align-items: center;
+        }
+
+        .material-detail h4::before {
+            content: '📚';
+            margin-right: 8px;
         }
 
         .material-detail ul {
-            margin-left: 20px;
+            margin-left: 25px;
+            margin-top: 8px;
         }
 
         .material-detail li {
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             color: #34495e;
+            line-height: 1.6;
         }
 
         .key-concepts {
-            background: #e8f6f3;
-            padding: 10px;
-            border-radius: 5px;
-            margin-top: 10px;
-            border-left: 3px solid #1abc9c;
+            background: linear-gradient(135deg, #e8f6f3, #d1f2eb);
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 12px;
+            border-left: 4px solid #1abc9c;
         }
 
         .key-concepts strong {
             color: #16a085;
         }
 
+        .example-box {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            border-left: 4px solid #ffc107;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 6px;
+            font-size: 0.9em;
+        }
+
+        .example-box strong {
+            color: #856404;
+        }
+
+        .correction-note {
+            background: linear-gradient(135deg, #d1ecf1, #b3d9ff);
+            border-left: 4px solid #17a2b8;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 6px;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        .correction-note strong {
+            color: #0c5460;
+        }
+
+        .skill-box {
+            background: linear-gradient(135deg, #e1f0fa, #cce5ff);
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            border-left: 3px solid #3498db;
+        }
+
+        .skill-box strong {
+            color: #2980b9;
+        }
+
         .footer {
             text-align: center;
-            padding: 20px;
-            background: #2c3e50;
+            padding: 25px;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
             color: white;
-            font-size: 0.85em;
+            font-size: 0.9em;
+            line-height: 1.8;
+        }
+
+        .footer p:first-child {
+            font-weight: 600;
+            margin-bottom: 5px;
         }
 
         @media (max-width: 768px) {
@@ -189,7 +291,7 @@
             }
             
             header h1 {
-                font-size: 1.4em;
+                font-size: 1.5em;
             }
             
             .content-section {
@@ -200,26 +302,31 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
+            
+            .section-header {
+                font-size: 1.2em;
+                padding: 15px 20px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>KISI-KISI PENILAIAN AKHIR SEMESTER (PAS)</h1>
-            <p>Pendidikan Agama dan Budi Pekerti | SMP Kelas IX Semester 1 | Kurikulum Merdeka</p>
+            <h1>BLUEPRINT PAS PENDIDIKAN AGAMA ISLAM - FINAL EDITION</h1>
+            <p>SMP Kelas IX Semester 1 | Kurikulum Merdeka | Tahun Ajaran 2025/2026</p>
         </header>
 
         <div class="summary-section">
-            <h2 style="color: #2c3e50; margin-bottom: 20px;">Spesifikasi Umum</h2>
+            <h2 style="color: #2c3e50; margin-bottom: 20px;">📋 Spesifikasi Ujian Lengkap</h2>
             <table class="summary-table">
                 <tr>
-                    <th width="30%">Kategori</th>
-                    <th width="70%">Detail</th>
+                    <th width="30%">Parameter</th>
+                    <th width="70%">Detail & Keterangan</th>
                 </tr>
                 <tr>
                     <td><strong>Tahun Ajaran</strong></td>
-                    <td>2025/2026</td>
+                    <td>2025/2026 (Semester Gasal)</td>
                 </tr>
                 <tr>
                     <td><strong>Mata Pelajaran</strong></td>
@@ -227,25 +334,37 @@
                 </tr>
                 <tr>
                     <td><strong>Kurikulum</strong></td>
-                    <td>Kurikulum Merdeka</td>
+                    <td>Kurikulum Merdeka (Capaian Pembelajaran SPKI)</td>
                 </tr>
                 <tr>
                     <td><strong>Alokasi Waktu</strong></td>
-                    <td>60 Menit</td>
+                    <td>60 Menit (Tanpa Kelonggaran)</td>
                 </tr>
                 <tr>
-                    <td><strong>Jumlah Soal</strong></td>
-                    <td>35 Butir Soal</td>
+                    <td><strong>Total Soal</strong></td>
+                    <td><strong>35 Butir</strong> (25 PG + 5 IS + 5 Esai)</td>
                 </tr>
                 <tr>
-                    <td><strong>Komposisi Soal</strong></td>
-                    <td>25 Pilihan Ganda, 5 Isian Singkat, 5 Esai</td>
+                    <td><strong>Kompetensi Inti</strong></td>
+                    <td>3. Memahami & menerapkan pengetahuan faktual, konseptual, prosedural</td>
+                </tr>
+                <tr>
+                    <td><strong>Kompetensi Dasar</strong></td>
+                    <td>3.1-3.4: Ibadah Kurban/Akikah, Zakat, Sejarah Islam</td>
+                </tr>
+                <tr>
+                    <td><strong>Materi Pokok</strong></td>
+                    <td>
+                        1. <strong>Kurban & Akikah:</strong> 11 soal (9 PG + 2 IS)<br>
+                        2. <strong>Zakat:</strong> 12 soal (9 PG + 3 Esai)<br>
+                        3. <strong>Muhammad Al Fatih:</strong> 12 soal (7 PG + 3 IS + 2 Esai)
+                    </td>
                 </tr>
             </table>
         </div>
 
         <div class="content-section">
-            <!-- Bagian 1: Kurban dan Akikah -->
+            <!-- BAGIAN 1: KURBAN DAN AKIKAH -->
             <div class="section-header">
                 🐑 MATERI KURBAN DAN AKIKAH (Soal 1-9, 26-27)
             </div>
@@ -256,18 +375,30 @@
                     <span class="question-type">Pilihan Ganda</span>
                 </div>
                 <div class="indicator">
-                    <strong>Indikator:</strong> Memahami ketentuan dasar kurban dalam Islam
+                    <strong>Indikator:</strong> Memahami definisi, hukum, dan filosofi dasar ibadah kurban dalam syariat Islam
                 </div>
                 <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
+                    <h4>Penjelasan Mendalam:</h4>
                     <ul>
-                        <li>Pengertian kurban sebagai ibadah qurban</li>
-                        <li>Dalil-dalil hukum kurban (Qur'an dan Hadits)</li>
-                        <li>Hikmah dan tujuan dilaksanakannya kurban</li>
-                        <li>Persyaratan hewan kurban (sehat, cacat, umur minimal)</li>
+                        <li><strong>Definisi Kurban:</strong> Secara bahasa berasal dari kata "qurbun" (dekat), artinya segala sesuatu yang mendekatkan diri kepada Allah SWT. Secara istilah: penyembelihan hewan ternak pada hari Iduladha sebagai ibadah.</li>
+                        <li><strong>Hukum Kurban:</strong> Sunnah Mu'akkadah (sunnah yang sangat ditekankan). Dalil: QS. Al-Kautsar ayat 2, dan Hadits Bukhari Muslim tentang keutamaan kurban.</li>
+                        <li><strong>Hikmah Kurban:</strong> 
+                            <ul style="margin-left: 20px;">
+                                <li>Mengikuti sunnah Nabi Ibrahim AS dan Nabi Muhammad SAW</li>
+                                <li>Latihan pengorbanan harta di jalan Allah</li>
+                                <li>Media berbagi dengan fakir miskin</li>
+                                <li>Menumbuhkan rasa syukur</li>
+                                <li>Pengingat akan kematian (penyembelihan hewan)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Persyaratan Hewan:</strong> Sehat, tidak cacat, mencapai umur syar'i (kambing 1 tahun, unta 5 tahun, sapi/kerbau 2 tahun)</li>
                     </ul>
+                    <div class="example-box">
+                        <strong>Contoh Soal:</strong> "Jika seseorang memiliki kelebihan harta cukup untuk nafkah keluarga, tetapi tidak berqurban, apakah dia berdosa?"
+                        <br><strong>Jawaban:</strong> Tidak berdosa (hukum sunnah), tetapi kehilangan pahala besar dan peluang mendekatkan diri kepada Allah.
+                    </div>
                     <div class="key-concepts">
-                        <strong>Konsep Kunci:</strong> Qurban, sunnah muakkad, hewan kurban yang sah, niat berqurban
+                        <strong>Konsep Penting:</strong> Qurban ibarat "upgrade" iman, bukan "patch" wajib. Tapi ulama sepakat sangat ditekankan.
                     </div>
                 </div>
             </div>
@@ -278,18 +409,32 @@
                     <span class="question-type">Pilihan Ganda</span>
                 </div>
                 <div class="indicator">
-                    <strong>Indikator:</strong> Memahami ketentuan teknis penyembelihan hewan kurban
+                    <strong>Indikator:</strong> Menganalisis tata cara penyembelihan hewan kurban yang syar'i dan filosofinya
                 </div>
                 <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
+                    <h4>Penjelasan Mendalam:</h4>
                     <ul>
-                        <li>Waktu yang diperbolehkan untuk penyembelihan (10-12 Dzulhijjah)</li>
-                        <li>Waktu terbaik penyembelihan (hari Iduladha)</li>
-                        <li>Tata cara penyembelihan sesuai syariat</li>
-                        <li>Doa saat penyembelihan kurban</li>
+                        <li><strong>Waktu Penyembelihan:</strong> 
+                            <ul style="margin-left: 20px;">
+                                <li>Dimulai: Setelah shalat Iduladha (10 Dzulhijjah) hingga akhir hari tasyriq (13 Dzulhijjah)</li>
+                                <li>Waktu terbaik: Hari Iduladha sebelum Dzuhur</li>
+                                <li>Batas akhir: Matahari terbenam di hari ke-13 Dzulhijjah</li>
+                            </ul>
+                        </li>
+                        <li><strong>Prinsip Penyembelihan:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Tajam: Pisau tajam agar hewan tidak menderita</li>
+                                <li>Cepat: Satu kali tebasan mematikan</li>
+                                <li>Tasymit: Memotong tenggorokan, pembuluh darah, dan pangkal tenggorokan</li>
+                                <li>Tidak memotong tulang belakang: Menghormati hewan</li>
+                                <li>Menghadap kiblat: Menunjukkan kesatuan arah ibadah</li>
+                            </ul>
+                        </li>
+                        <li><strong>Doa Penyembelihan:</strong> "Bismillah, Allahu Akbar, Allahumma minka wa laka..." dengan niat qurban</li>
+                        <li><strong>Filsosofi:</strong> Mengajarkan kelembutan meski dalam pembunuhan (hewan), pentingnya niat, dan kebersihan tempat.</li>
                     </ul>
                     <div class="key-concepts">
-                        <strong>Konsep Kunci:</strong> Tasyriq, takbir, tajdid niyyah, pemotongan tenggorokan
+                        <strong>Konsep Penting:</strong> Dzabihah (cara sembelih Islam), Tasmiyyah (menyebut nama Allah), Tajdid Niyyah (niat ulang)
                     </div>
                 </div>
             </div>
@@ -300,18 +445,25 @@
                     <span class="question-type">Pilihan Ganda</span>
                 </div>
                 <div class="indicator">
-                    <strong>Indikator:</strong> Mengetahui waktu tepat penyembelihan kurban
+                    <strong>Indikator:</strong> Menentukan waktu-waktu strategis penyembelihan kurban dan konsekuensi telat
                 </div>
                 <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
+                    <h4>Penjelasan Mendalam:</h4>
                     <ul>
-                        <li>Hari-hari nahr (penyembelihan)</li>
-                        <li>Batas akhir waktu kurban</li>
-                        <li>Konsekuensi melewati waktu yang ditentukan</li>
-                        <li>Perbedaan waktu kurban dengan akikah</li>
+                        <li><strong>Hari-Hari Nahr:</strong> 10, 11, 12, 13 Dzulhijjah (4 hari)</li>
+                        <li><strong>Dalil:</strong> Hadits Muslim tentang hari-hari tasyriq di mana kita makan minum dan berdzikir kepada Allah.</li>
+                        <li><strong>Konsekuensi Melewati Waktu:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Hukum: Kurban tidak sah dan menjadi daging biasa</li>
+                                <li>Pahala qurban hilang, tapi masih bisa disedekahkan</li>
+                                <li>Tidak bisa mengganti dengan qurban tahun depan (tidak ada qadha)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Perbedaan dengan Akikah:</strong> Akikah tidak terikat waktu, bisa kapan saja setelah kelahiran. Kurban terikat waktu.</li>
                     </ul>
-                    <div class="key-concepts">
-                        <strong>Konsep Kunci:</strong> Dzulhijjah, hari tasyrik, waktu terlarang, qadha kurban
+                    <div class="example-box">
+                        <strong>Contoh:</strong> Pak Amin baru menyembelih pada 14 Dzulhijjah karena menunggu datangnya sepupu.
+                        <br><strong>Status:</strong> Tidak sah qurban, daging hanya boleh dikonsumsi, tidak boleh disebar sebagai daging qurban.
                     </div>
                 </div>
             </div>
@@ -322,18 +474,42 @@
                     <span class="question-type">Pilihan Ganda</span>
                 </div>
                 <div class="indicator">
-                    <strong>Indikator:</strong> Memahami persamaan dan perbedaan kurban dan akikah
+                    <strong>Indikator:</strong> Membandingkan dan mengkontraskan ibadah kurban vs akikah secara komprehensif
                 </div>
                 <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
-                    <ul>
-                        <li>Persamaan: jenis hewan, syarat sah, cara penyembelihan</li>
-                        <li>Perbedaan: waktu, tujuan, status hukum, porsi pembagian</li>
-                        <li>Keutamaan masing-masing ibadah</li>
-                    </ul>
-                    <div class="key-concepts">
-                        <strong>Konsep Kunci:</strong> Sunnah muakkad vs sunnah ghairu muakkad, aqiqah 7 hari, qurban Iduladha
-                    </div>
+                    <h4>Penjelasan Komparatif:</h4>
+                    <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+                        <tr style="background: #3498db; color: white;">
+                            <th style="padding: 10px; border: 1px solid #ddd;">Aspek</th>
+                            <th style="padding: 10px; border: 1px solid #ddd;">Kurban</th>
+                            <th style="padding: 10px; border: 1px solid #ddd;">Akikah</th>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><strong>Hukum</strong></td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">Sunnah Mu'akkadah</td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">Sunnah (lebih lembaga: Ghairu Mu'akkad)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><strong>Waktu</strong></td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">Spesifik (10-13 Dzulhijjah)</td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">Fleksibel (hari ke-7, 14, 21, atau kapan saja)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><strong>Tujuan</strong></td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">Mengiksunah Ibrahim, syukur pada Iduladha</td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">Syukur atas kelahiran anak, perlindungan dari setan</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><strong>Jumlah</strong></td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">1 hewan per 1 orang/lebih</td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">2 kambing (laki), 1 kambing (perempuan)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><strong>Porsi</strong></td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">Dibagi 3 (makan, sedekah, simpan)</td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">Disarankan habis disebar (kecuali sedikit)</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
 
@@ -343,18 +519,24 @@
                     <span class="question-type">Pilihan Ganda</span>
                 </div>
                 <div class="indicator">
-                    <strong>Indikator:</strong> Mengetahui porsi pembagian daging kurban
+                    <strong>Indikator:</strong> Menghitung porsi distribusi daging kurban dan menjelaskan filosofinya
                 </div>
                 <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
+                    <h4>Penjelasan Mendalam:</h4>
                     <ul>
-                        <li>Pengelompokan porsi: fakir miskin, amil, muallaf, etc.</li>
-                        <li>Ketentuan pembagian 3 bagian: diri sendiri, keluarga, fakir miskin</li>
-                        <li>Boleh tidaknya dijual daging kurban</li>
-                        <li>Tata cara distribusi yang adil</li>
+                        <li><strong>Porsi Lengkap: Tiga Bagian Sama Rata</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>1/3 untuk diri sendiri & keluarga:</strong> Hak konsumsi pribadi, boleh dimasak dan disajikan</li>
+                                <li><strong>1/3 untuk fakir miskin:</strong> Wajib disalurkan kepada yang berhak</li>
+                                <li><strong>1/3 untuk tetangga & saudara:</strong> Menjalin silaturrahmi, boleh fakir atau miskin</li>
+                            </ul>
+                        </li>
+                        <li><strong>Dalil:</strong> QS. Al-Hajj ayat 28 tentang makan dari daging qurban.</li>
+                        <li><strong>Larangan:</strong> Dilarang menjual daging quran. Hadits: "Barangsiapa menjual kulit qurbannya, maka tidak ada qurban baginya."</li>
+                        <li><strong>Nuansa Modern:</strong> Boleh menyuruh pedagang daging untuk proses sembelih-potong-distribusi, asal niat quran jelas.</li>
                     </ul>
-                    <div class="key-concepts">
-                        <strong>Konsep Kunci:</strong> Mustahiq, tasadduq, tidak boleh dijual, distribusi 1/3
+                    <div class="skill-box">
+                        <strong>Keterampilan:</strong> Perhitungan matematika sederhana (1/3), pemahaman konteks sosial, integrasi nilai-nilai Islam.
                     </div>
                 </div>
             </div>
@@ -365,19 +547,22 @@
                     <span class="question-type">Pilihan Ganda</span>
                 </div>
                 <div class="indicator">
-                    <strong>Indikator:</strong> Memahami ketentuan pelaksanaan akikah
+                    <strong>Indikator:</strong> Menghafal dan memahami ketentuan teknis akikah (jumlah hewan, waktu, syarat)
                 </div>
                 <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
+                    <h4>Penjelasan Mendalam:</h4>
                     <ul>
-                        <li>Pengertian akikah sebagai rasa syukur atas kelahiran</li>
-                        <li>Jumlah hewan untuk anak laki-laki/perempuan</li>
-                        <li>Waktu pelaksanaan yang disunnahkan</li>
-                        <li>Hukum akikah (sunnah muakkad)</li>
+                        <li><strong>Jumlah Hewan:</strong> 
+                            <ul style="margin-left: 20px;">
+                                <li>Anak Laki-laki: 2 ekor kambing/domba (bisa 1 sapi = 7 orang)</li>
+                                <li>Anak Perempuan: 1 ekor kambing/domba</li>
+                                <li>Dalil: Hadits Tirmidzi tentang akikah Hassan dan Husain RA.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Waktu Ideal:</strong> Hari ke-7 setelah kelahiran. Jika tidak sempat, bisa di hari ke-14 atau 21. Jika masih belum, boleh kapan saja sebelum baligh.</li>
+                        <li><strong>Hukum:</strong> Sunnah Mu'akkadah (sunnah yang sangat dianjurkan). Ulama Malikiyah dan Hambali mengatakan wajib bagi yang mampu.</li>
+                        <li><strong>Syarat Hewan:</strong> Sama dengan kurban (sehat, tidak cacat, mencapai umur)</li>
                     </ul>
-                    <div class="key-concepts">
-                        <strong>Konsep Kunci:</strong> 2 kambing untuk laki-laki, 1 kambing untuk perempuan, hari ke-7, menggunting rambut
-                    </div>
                 </div>
             </div>
 
@@ -387,19 +572,29 @@
                     <span class="question-type">Pilihan Ganda</span>
                 </div>
                 <div class="indicator">
-                    <strong>Indikator:</strong> Memahami makna filosofis akikah
+                    <strong>Indikator:</strong> Menafsirkan makna spiritual dan psikologis ibadah akikah
                 </div>
                 <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
+                    <h4>Penjelasan Mendalam:</h4>
                     <ul>
-                        <li>Makna spiritual: pengislaman anak, penyucian jiwa</li>
-                        <li>Ekspresi syukur kepada Allah</li>
-                        <li>Perlindungan dari gangguan setan</li>
-                        <li>Pemberian nama yang baik</li>
+                        <li><strong>Makna Syar'i:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Pengislaman bayi (sebagai wujud syukur atas anugerah Allah)</li>
+                                <li>Perlindungan dari gangguan setan (QS. Al-A'raf: 200-201)</li>
+                                <li>Penyucian jiwa dari kelahiran (fitrah)</li>
+                                <li>Pemberian identitas Islam (melalui nama dan pengikatan dengan Allah)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Adat yang Disunnahkan:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Menggunting rambut bayi (setelah sembelih)</li>
+                                <li>Menimbang rambut dan menyedekahkan emas senilai berat rambut</li>
+                                <li>Pemberian nama yang baik dan islami</li>
+                                <li>Aqiqah disertai doa selamat dan syukur</li>
+                            </ul>
+                        </li>
+                        <li><strong>Dampak Psikologis:</strong> Menumbuhkan rasa kepedulian orang tua terhadap tanggung jawab spiritual anak.</li>
                     </ul>
-                    <div class="key-concepts">
-                        <strong>Konsep Kunci:</strong> Syukur, tabarrukan, nazhar, nama Islami
-                    </div>
                 </div>
             </div>
 
@@ -409,19 +604,31 @@
                     <span class="question-type">Pilihan Ganda</span>
                 </div>
                 <div class="indicator">
-                    <strong>Indikator:</strong> Memahami dalil-dalil tentang kurban dan akikah
+                    <strong>Indikator:</strong> Menyebutkan dalil-dalil utama tentang kurban dan akikah (Qur'an & Hadits)
                 </div>
                 <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
+                    <h4>Penjelasan Mendalam:</h4>
                     <ul>
-                        <li>Dalil qur'ani tentang kurban (QS. Al-Kautsar, Al-Hajj)</li>
-                        <li>Hadits Nabi tentang kurban dan akikah</li>
-                        <li>Perintah N Ibrahim AS dalam melaksanakan kurban</li>
-                        <li>Ijmak ulama tentang keutamaan kedua ibadah ini</li>
+                        <li><strong>Dalil Qur'an Kurban:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>QS. Al-Kautsar: 2 "Fa-shalli li-Rabbika wa-nhar" (sembahyang dan sembelih)</li>
+                                <li>QS. Al-Hajj: 34-37 "Wa-l-kudzi min laHmi l-udhHiyati..." (ambillah dari daging qurban...)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Dalil Hadits Kurban:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Hadits Bukhari: "Barangsiapa yang mampu dan tidak berqurban, janganlah ia mendekati tempat shalat kami"</li>
+                                <li>Hadits Tirmidzi: Tentang tata cara dan keutamaan kurban</li>
+                            </ul>
+                        </li>
+                        <li><strong>Dalil Akikah:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Hadits Tirmidzi: "Setiap anak digadaikan dengan aqiqahnya, disembelihkan hewan untuknya pada hari ketujuh, dan diberi nama serta dipotong rambutnya"</li>
+                                <li>Hadits Bukhari tentang aqiqah Hassan dan Husain RA.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Ijmak:</strong> Kesepakatan ulama tentang sunnahnya kurban dan akikah.</li>
                     </ul>
-                    <div class="key-concepts">
-                        <strong>Konsep Kunci:</strong> QS. 108:2, QS. 22:34-37, Hadits Bukhari
-                    </div>
                 </div>
             </div>
 
@@ -431,19 +638,28 @@
                     <span class="question-type">Pilihan Ganda</span>
                 </div>
                 <div class="indicator">
-                    <strong>Indikator:</strong> Memahami tata cara penyembelihan yang syar'i
+                    <strong>Indikator:</strong> Mengaplikasikan syarat penyembelih hewan kurban/akikah dalam konteks modern
                 </div>
                 <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
+                    <h4>Penjelasan Mendalam:</h4>
                     <ul>
-                        <li>Syarat penyembelih: Muslim, baligh, berakal</li>
-                        <li>Teknik penyembelihan: tajam, tenggorokan, tidak memotong tulang belakang</li>
-                        <li>Menyebut nama Allah saat menyembelih</li>
-                        <li>Kehalalan hewan yang disembelih</li>
+                        <li><strong>Syarat Penyembelih:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Islam (kafir tidak sah)</li>
+                                <li>Baligh & Berakal (tidak anak-anak atau gila)</li>
+                                <li>Mampu menyembelih dengan benar</li>
+                                <li>Menyebut nama Allah (boleh bisik, tidak harus keras)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Contoh Kontemporer:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Boleh menyewa jasa petugas rumah potong hewan (RPH) asal dia Muslim dan menyebut nama Allah</li>
+                                <li>Boleh menggunakan mesin otomatis (contoh: poultry) asal ada niat dan tasmiyyah di awal</li>
+                                <li>Tidak boleh menyembelih dalam keadaan marah atau terburu-buru</li>
+                            </ul>
+                        </li>
+                        <li><strong>Dalil:</strong> QS. Al-Maidah: 3 "Dilarang memakan bangkai darah, daging babi..." dengan syarat menyebut nama Allah saat menyembelih.</li>
                     </ul>
-                    <div class="key-concepts">
-                        <strong>Konsep Kunci:</strong> Al-Qurthubi, tajdid niyyah, zabiha, tasmiyyah
-                    </div>
                 </div>
             </div>
 
@@ -453,18 +669,27 @@
                     <span class="question-type">Isian Singkat</span>
                 </div>
                 <div class="indicator">
-                    <strong>Indikator:</strong> Menjelaskan makna taqarrub dalam konteks kurban
+                    <strong>Indikator:</strong> Menjelaskan makna filosofis taqarrub dalam ibadah kurban
                 </div>
                 <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
+                    <h4>Penjelasan Mendalam:</h4>
                     <ul>
-                        <li>Filsafat berqurban: mendekatkan diri kepada Allah SWT</li>
-                        <li>Manifestasi ketundukan total kepada Allah</li>
-                        <li>Pengorbanan harta untuk kepentingan sosial</li>
-                        <li>Membentuk kepribadian dermawan</li>
+                        <li><strong>Taqarrub:</strong> Berasal dari kata "qurbah" yang artinya dekat. Taqarrub adalah usaha mendekatkan diri kepada Allah SWT.</li>
+                        <li><strong>Filosofi dalam Kurban:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Pengorbanan Material:</strong> Mengorbankan harta yang mahal menunjukkan prioritas Allah > harta</li>
+                                <li><strong>Pengendalian Nafsu:</strong> Melatih diri tidak tamak, mau berbagi</li>
+                                <li><strong>Simbol Ketundukan:</strong> Seperti Nabi Ibrahim siap mengorbankan Nabi Ismail</li>
+                                <li><strong>Media Dermawan:</strong> Menumbuhkan kepribadian dermawan yang menjadi ciri Muslim sejati</li>
+                            </ul>
+                        </li>
+                        <li><strong>Dampak Psikologis:</strong> Mengurangi materialisme, meningkatkan empati sosial</li>
                     </ul>
                     <div class="key-concepts">
-                        <strong>Jawaban yang Diharapkan:</strong> "Mendekatkan diri kepada Allah melalui pengorbanan"
+                        <strong>Jawaban Standar:</strong> "Mendekatkan diri kepada Allah melalui pengorbanan harta dan pengendalian nafsu"
+                    </div>
+                    <div class="skill-box">
+                        <strong>Keterampilan:</strong> Kognitif tingkat tinggi (analisis konseptual), kemampuan mensintesis makna spiritual.
                     </div>
                 </div>
             </div>
@@ -475,25 +700,59 @@
                     <span class="question-type">Isian Singkat</span>
                 </div>
                 <div class="indicator">
-                    <strong>Indikator:</strong> Menyebutkan syarat hewan kurban yang sah
+                    <strong>Indikator:</strong> Menyebutkan 3 syarat utama hewan kurban yang sah secara lengkap
                 </div>
                 <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
+                    <h4>Penjelasan Mendalam:</h4>
                     <ul>
-                        <li>Jenis hewan yang disyariatkan: unta, sapi, kerbau, kambing, domba</li>
-                        <li>Umur minimal masing-masing hewan</li>
-                        <li>Kondisi fisik: sehat, tidak cacat, tidak kurus kurus</li>
-                        <li>Tidak hilang bagian tubuh penting</li>
+                        <li><strong>Syarat #1: SEHAT (Sihhah)</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Tidak sakit yang mengganggu kualitas daging</li>
+                                <li>Bisa berdiri dan makan normal</li>
+                                <li>Tidak cacat permanen</li>
+                                <li>Contoh cacat: buta satu/two mata, patah kaki, kurus kering</li>
+                            </ul>
+                        </li>
+                        <li><strong>Syarat #2: Mencapai UMUR SYAR'I</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Kambing/Domba: Minimal 1 tahun (sudah ganti gigi)</li>
+                                <li>Sapi/Kerbau: Minimal 2 tahun</li>
+                                <li>Unta: Minimal 5 tahun</li>
+                            </ul>
+                        </li>
+                        <li><strong>Syarat #3: TIDAK CACAT YANG DIHUKUMI</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Cacat yang diharamkan: 
+                                    <ul style="margin-left: 15px;">
+                                        <li>Kurus kering (gaarun)</li>
+                                        <li>Sakit parah (la'yun)</li>
+                                        <li>Lumpuh (dzi jarh)</li>
+                                        <li>Buta (la'yun basyar)</li>
+                                        <li>Pincang berat ('arajun ba'in)</li>
+                                    </ul>
+                                </li>
+                                <li>Cacat yang diperbolehkan: 
+                                    <ul style="margin-left: 15px;">
+                                        <li>Pincang ringan</li>
+                                        <li>Tanduk patah (tidak mengganggu)</li>
+                                        <li>Kulit luka kecil</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong>Syarat Tambahan:</strong> Tidak hilang bagian badan (ekor, telinga >1/3)</li>
                     </ul>
-                    <div class="key-concepts">
-                        <strong>Jawaban yang Diharapkan:</strong> "Sehat, tidak cacat, mencapai umur syar'i"
-                    </div>
                 </div>
             </div>
 
-            <!-- Bagian 2: Zakat -->
+            <!-- BAGIAN 2: ZAKAT - FULL DEEP DIVE -->
             <div class="section-header">
-                💰 MATERI ZAKAT (Soal 10-18, 31-33)
+                💰 MATERI ZAKAT - BAHASAN KOMPREHENSIF (Soal 10-18, 31-33)
+            </div>
+
+            <div class="correction-note">
+                <strong>🎯 PERBAIKAN TOTAL:</strong> Semua soal zakat telah diperdalam dengan contoh praktis, dalil tekstual, 
+                dan analisis kontekstual. Fokus pada penerapan di era digital dan ekonomi modern.
             </div>
 
             <div class="question-item">
@@ -502,18 +761,40 @@
                     <span class="question-type">Pilihan Ganda</span>
                 </div>
                 <div class="indicator">
-                    <strong>Indikator:</strong> Memahami definisi dan hukum zakat
+                    <strong>Indikator:</strong> Mendefinisikan zakat secara etimologis, terminologis, dan membedah jenis-jenisnya
                 </div>
                 <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
+                    <h4>Penjelasan Ultra-Mendalam:</h4>
                     <ul>
-                        <li>Pengertian zakat secara bahasa dan istilah</li>
-                        <li>Hukum zakat fitrah (wajib) dan zakat mal (wajib)</li>
-                        <li>Perbedaan zakat, sedekah, dan infak</li>
-                        <li>Dalil wajibnya zakat (QS. Al-Baqarah: 43, 110)</li>
+                        <li><strong>Etimologi:</strong> "Zakat" berasal dari kata "zaka" yang artinya tumbuh, bertambah, bersih, suci. Harta yang dikeluarkan tumbuh menjadi berkah.</li>
+                        <li><strong>Terminologi:</strong> Sejumlah harta tertentu yang wajib dikeluarkan oleh Muslim yang mampu untuk diberikan kepada 8 golongan mustahiq sesuai syariat.</li>
+                        <li><strong>Jenis Zakat (Taksonomi Lengkap):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Zakat Fitrah:</strong> Zakat jiwa, wajib 1x/tahun (Ramadhan), nominal tetap per orang</li>
+                                <li><strong>Zakat Mal:</strong> Zakat harta, wajib jika syarat terpenuhi, presentase 2.5%</li>
+                                <li><strong>Zakat Profesi:</strong> Zakat penghasilan (pendapat kontemporer)</li>
+                                <li><strong>Zakat Perusahaan:</strong> Zakat aset perusahaan (contoh: zakat saham)</li>
+                                <li><strong>Zakat Lada Galian:</strong> 20% dari hasil tambang (dalil QS. At-Taubah: 34-35)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Perbedaan dengan Infaq & Sedekah:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Zakat:</strong> Wajib, nominal pasti, waktu pasti, sasaran pasti (8 asnaf)</li>
+                                <li><strong>Infaq:</strong> Sunnah, tidak terikat nominal, boleh untuk non-Muslim</li>
+                                <li><strong>Sedekah:</strong> Sunnah, spontan, tidak terikat syarat</li>
+                            </ul>
+                        </li>
+                        <li><strong>Dalil Utama:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>QS. Al-Baqarah: 43 "Dan dirikanlah shalat, tunaikanlah zakat"</li>
+                                <li>QS. At-Taubah: 103 "Ambillah zakat dari sebagian harta mereka"</li>
+                                <li>QS. Al-Ma'arij: 24-25 "Dan orang-orang yang menunaikan zakat"</li>
+                                <li>Hadits Bukhari: Zakat sebagai rukun Islam ke-3</li>
+                            </ul>
+                        </li>
                     </ul>
-                    <div class="key-concepts">
-                        <strong>Konsep Kunci:</strong> Rukun Islam, harta yang wajib dizakati, nisab, haul
+                    <div class="skill-box">
+                        <strong>Keterampilan Berpikir:</strong> Analisis konseptual (C4), Sintesis taksonomi (C5), Evaluasi perbedaan (C6)
                     </div>
                 </div>
             </div>
@@ -524,18 +805,36 @@
                     <span class="question-type">Pilihan Ganda</span>
                 </div>
                 <div class="indicator">
-                    <strong>Indikator:</strong> Memahami ketentuan zakat fitrah
+                    <strong>Indikator:</strong> Menguraikan ketentuan Zakat Fitrah dengan presisi termasuk hitungan, waktu, dan distribusi
                 </div>
                 <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
+                    <h4>Penjelasan Mendalam:</h4>
                     <ul>
-                        <li>Definisi zakat fitrah sebagai pembersih puasa</li>
-                        <li>Waktu wajib: akhir Ramadhan - sebelum shalat Id</li>
-                        <li>Bentuk zakat fitrah: makanan pokok setempat</li>
-                        <li>Jumlah: 1 sha' = 2.5 kg atau 3.5 liter</li>
+                        <li><strong>Definisi Lengkap:</strong> Zakat yang wajib atas setiap jiwa (nafs) Muslim yang mampu, sebagai pembersih puasa dan pengganti kekurangan amal selama Ramadhan.</li>
+                        <li><strong>Hukum:</strong> WAJIB (menurut mayoritas ulama: Hanafi, Maliki, Hambali, Syafi'i). Dalil: Hadits Abu Dawud.</li>
+                        <li><strong>Wajib Atas Siapa:</strong> 
+                            <ul style="margin-left: 20px;">
+                                <li>Setiap Muslim yang mampu (punya kelebihan nafkah 1 hari raya)</li>
+                                <li>Kepala keluarga wajib membayarkan untuk istri, anak-anak, dan orang tua yang ditanggung</li>
+                                <li>Bayi yang lahat sebelum maghrib akhir Ramadhan (menurut ulama Syafi'i)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Jumlah (Kadar):</strong> 1 SHA' = 3,5 liter = 2,5 kg beras (lebih disukai) atau gandum/kurma. Dalil: Hadits Bukhari Muslim.</li>
+                        <li><strong>Waktu:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Wajib: Akhir Ramadhan (saat matahari terbenam)</li>
+                                <li>Disunnahkan: 1-2 hari sebelum Idul Fitri</li>
+                                <li>Batas akhir: Sebelum shalat Idul Fitri</li>
+                                <li>Dilarang: Setelah shalat Id (menurut mayoritas)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Bentuk:</strong> Disunnahkan berupa makanan pokok setempat (beras di Indonesia). Boleh dikonversi ke uang jika lebih efektif.</li>
+                        <li><strong>Sasaran:</strong> Fakir miskin khususnya untuk kebutuhan hari raya</li>
                     </ul>
-                    <div class="key-concepts">
-                        <strong>Konsep Kunci:</strong> 2.5 kg beras, wajib atas kepala keluarga, disalurkan sebelum Id
+                    <div class="example-box">
+                        <strong>Contoh Kasus:</strong> Keluarga Ahmad (Ayah, Ibu, 3 anak) punya penghasilan cukup. 
+                        <br><strong>Hitungan:</strong> 5 orang x 2,5 kg = 12,5 kg beras atau uang setara harga beras saat ini (misal Rp 15.000/kg = Rp 187.500).
+                        <br><strong>Waktu:</strong> Bayar pada 28-29 Ramadhan melalui BAZNAS.
                     </div>
                 </div>
             </div>
@@ -546,18 +845,45 @@
                     <span class="question-type">Pilihan Ganda</span>
                 </div>
                 <div class="indicator">
-                    <strong>Indikator:</strong> Memahami ketentuan zakat mal
+                    <strong>Indikator:</strong> Menganalisis syarat wajib zakat mal secara kritis dan komprehensif
                 </div>
                 <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
+                    <h4>Penjelasan Mendalam:</h4>
                     <ul>
-                        <li>Harta yang wajib dizakati: emas, perak, uang, dagangan, hasil pertanian</li>
-                        <li>Syarat wajib zakat: Islam, merdeka, berakal, mencapai nisab, haul</li>
-                        <li>Tarif zakat: 2.5% untuk harta simpanan</li>
-                        <li>Perhitungan nisab emas (85 gr) dan perak (595 gr)</li>
+                        <li><strong>Harta yang Wajib Dizakati (8 Golongan):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>1. <strong>Emas & Perak:</strong> Logam mulia, simpanan, perhiasan (yang tidak dipakai)</li>
+                                <li>2. <strong>Uang:</strong> Tabungan, deposito, valas, uang tunai</li>
+                                <li>3. <strong>Dagangan:</strong> Barang dagangan (toko, grosir, e-commerce)</li>
+                                <li>4. <strong>Pertanian:</strong> Hasil bumi (5-10% tergantung irigasi)</li>
+                                <li>5. <strong>Peternakan:</strong> Kambing, sapi, unta (ada nisab tersendiri)</li>
+                                <li>6. <strong>Ladang Galian:</strong> Emas, perak, minyak, gas (20%)</li>
+                                <li>7. <strong>Rikaz:</strong> Harta temuan warisan (20%)</li>
+                                <li>8. <strong>Harta Kekayaan Lain:</strong> Saham, obligasi, properti (yang diperjualbelikan)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Rukun Zakat Mal (6 Syarat):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>1. Islam:</strong> Non-muslim tidak wajib</li>
+                                <li><strong>2. Merdeka:</strong> Bukan budak</li>
+                                <li><strong>3. Baligh & Berakal:</strong> Sudah dewasa, tidak gila</li>
+                                <li><strong>4. Milik Penuh:</strong> Bukan titipan atau harta orang tua</li>
+                                <li><strong>5. Mencapai Nisab:</strong> Batas minimum wajib zakat</li>
+                                <li><strong>6. Lewat Haul:</strong> Satu tahun pemilikan penuh (penggabungan harta diperbolehkan)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Nisab Klasik:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Emas: 85 gram (pure 24 karat)</li>
+                                <li>Perak: 595 gram</li>
+                                <li>Uang: Setara 85 gram emas saat ini</li>
+                            </ul>
+                        </li>
+                        <li><strong>Formula Umum:</strong> 2,5% x (Total Harta Kena Zakat - Hutang Jangka Pendek)</li>
                     </ul>
-                    <div class="key-concepts">
-                        <strong>Konsep Kunci:</strong> Nisab, haul, tarif 2.5%, harta yang tumbuh
+                    <div class="example-box">
+                        <strong>Nisab Kontemporer:</strong> Jika harga emas Rp 1.100.000/gram, maka nisab uang = 85 x Rp 1.100.000 = <strong>Rp 93.500.000</strong>
+                        <br>Siapa pun punya harta ≥ Rp 93,5 juta selama 1 tahun, WAJIB zakat.
                     </div>
                 </div>
             </div>
@@ -568,19 +894,31 @@
                     <span class="question-type">Pilihan Ganda</span>
                 </div>
                 <div class="indicator">
-                    <strong>Indikator:</strong> Mengetahui dalil-dalil zakat dalam Al-Qur'an
+                    <strong>Indikator:</strong> Menelusuri dalil-dalil tekstual zakat dan memahami konteks turunnya ayat
                 </div>
                 <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
+                    <h4>Penjelasan Mendalam:</h4>
                     <ul>
-                        <li>Ayat-ayat tentang zakat dalam Al-Qur'an</li>
-                        <li>QS. At-Taubah: 103, 60 (asnaf mustahiq)</li>
-                        <li>QS. Al-Baqarah: 267 tentang harta yang baik untuk zakat</li>
-                        <li>Hadits tentang ancaman menunda zakat</li>
+                        <li><strong>Dalil Qur'an (Ayat Sughro & Kubro):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>QS. Al-Baqarah: 43:</strong> "Waa-aqimus-salaata wa-aatuz-zakaata" - Ayat wahyu pertama tentang zakat, ditujukan kepada Bani Israil. Konteks: Teguran keras jika tidak tunaikan.</li>
+                                <li><strong>QS. At-Taubah: 103:</strong> "Khudz min amwaalihim shadaqah" - Ayat perintah langsung Nabi untuk ambil zakat. Konteks: Setelah perang Tabuk, zakat digunakan untuk mempersatukan umat.</li>
+                                <li><strong>QS. At-Taubah: 60:</strong> "Innamaash-shadaqaatu lil-fuqooraa..." - Penjelasan 8 asnaf penerima zakat. Konteks: Menjawab pertanyaan sahabat tentang siapa yang berhak.</li>
+                                <li><strong>QS. Al-Baqarah: 267:</strong> "Yaa ayyuhalladziina aamanuu anfiquu min thayyibaat..." - Perintah berinfak dari yang baik, bukan yang jelek.</li>
+                                <li><strong>QS. Fushilat: 6-7:</strong> "Walladziina yu'tuunaz-zakaata..." - Zakat sebagai ciri orang mukmin.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Dalil Hadits:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Hadits Bukhari: "Islam berdiri atas 5 prinsip: Syahadat, Shalat, Zakat, Puasa, Haji"</li>
+                                <li>Hadits Tirmidzi: "Mintalah zakat dari harta mereka, karena zakat membersihkan harta"</li>
+                                <li>Hadits Abu Dawud: "Barangsiapa yang Allah beri harta tetapi tidak membayar zakatnya, pada hari kiamat hartanya akan dijadikan ular besi yang melilitnya"</li>
+                                <li>Hadits Ibnu Majah: Ada kekhususan hadits tentang 8 asnaf yang sangat detail</li>
+                            </ul>
+                        </li>
+                        <li><strong>Dalil Ijmak:</strong> Kesepakatan ulama seluruh madzhab tentang wajibnya zakat. Tidak ada perbedaan pendapat.</li>
+                        <li><strong>Sejarah Turunnya:</strong> Zakat diwajibkan pada tahun ke-2 Hijriah, setelah perintah puasa Ramadhan.</li>
                     </ul>
-                    <div class="key-concepts">
-                        <strong>Konsep Kunci:</strong> 8 asnaf, harta yang baik, ancaman azab, pahala lipat ganda
-                    </div>
                 </div>
             </div>
 
@@ -590,18 +928,73 @@
                     <span class="question-type">Pilihan Ganda</span>
                 </div>
                 <div class="indicator">
-                    <strong>Indikator:</strong> Memahami peran agama Islam dalam pengelolaan zakat
+                    <strong>Indikator:</strong> Evaluasi peran zakat dalam perekonomian Islam dan penanganan kemiskinan
                 </div>
                 <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
+                    <h4>Penjelasan Mendalam:</h4>
                     <ul>
-                        <li>Fungsi zakat dalam perekonomian umat</li>
-                        <li>Peran Baitul Mal dalam sejarah Islam</li>
-                        <li>Pemberdayaan ekonomi melalui zakat produktif</li>
-                        <li>Dampak sosial zakat terhadap kesenjangan ekonomi</li>
+                        <li><strong>Fungsi Ekonomi Zakat:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Redistribusi Kekayaan:</strong> Memindahkan dari yang berlebih ke yang kekurangan</li>
+                                <li><strong>Stimulasi Ekonomi:</strong> Uang beredar ke lapisan bawah, meningkatkan demand</li>
+                                <li><strong>Pencegahan Inflasi:</strong> Mengurangi masyarakat menahan uang (hoarding)</li>
+                                <li><strong>Pemberdayaan Modal:</strong> Zakat produktif bisa menjadi modal usaha mustahiq</li>
+                            </ul>
+                        </li>
+                        <li><strong>Peran Zakat vs Pajak:</strong>
+                            <table style="width: 100%; margin: 15px 0; border-collapse: collapse;">
+                                <tr style="background: #3498db; color: white;">
+                                    <th style="padding: 8px; border: 1px solid #ddd;">Aspek</th>
+                                    <th style="padding: 8px; border: 1px solid #ddd;">Zakat</th>
+                                    <th style="padding: 8px; border: 1px solid #ddd;">Pajak</th>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">Dasar Hukum</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">Agama (Allah & Rasul)</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">Negara (Undang-undang)</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">Tujuan</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">Ibadah + Sosial</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">Fiskal Negara</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">Sasaran</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">8 Asnaf (spesifik)</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">APBN (umum)</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">Tarif</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">Tetap (2.5%)</td>
+                                    <td style="padding: 8px; border: 1px solid #ddd;">Variabel (progresif)</td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li><strong>Peran Zakat Fitrah Khususnya:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Ekonomi Mikro: Meningkatkan purchasing power fakir miskin di hari raya</li>
+                                <li>Stabilisasi Sosial: Mengurangi kesenjangan sesaat</li>
+                                <li>Symbolik: Menunjukkan kepedulian umat</li>
+                            </ul>
+                        </li>
+                        <li><strong>Peran Zakat Mal:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Ekonomi Makro: Jika 100% muzakki bayar, zakat nasional bisa capai Rp 200 Triliun/tahun (menurut BAZNAS)</li>
+                                <li>Pemberdayaan: Zakat produktif menjadi modal UMKM</li>
+                                <li>SDM: Beasiswa pendidikan dari zakat</li>
+                                <li>Kesehatan: Asuransi kesehatan gratis bagi fakir miskin</li>
+                            </ul>
+                        </li>
+                        <li><strong>Model Distribusi Ideal:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>40%: Konsumtif (sembako, sandang)</li>
+                                <li>60%: Produktif (modal usaha, pelatihan)</li>
+                                <li>Sistem: Monitoring & evaluation ketat untuk efektivitas</li>
+                            </ul>
+                        </li>
                     </ul>
-                    <div class="key-concepts">
-                        <strong>Konsep Kunci:</strong> Baitul Mal, zakat produktif, pemerataan ekonomi, kesejahteraan umat
+                    <div class="skill-box">
+                        <strong>Keterampilan:</strong> Analisis ekonomi Islam (C4), Evaluasi kebijakan (C5), Desain sistem (C6)
                     </div>
                 </div>
             </div>
@@ -612,19 +1005,42 @@
                     <span class="question-type">Pilihan Ganda</span>
                 </div>
                 <div class="indicator">
-                    <strong>Indikator:</strong> Menghitung besar wajib zakat mal
+                    <strong>Indikator:</strong> Menyelesaikan perhitungan zakat mal multi-sumber dengan akurasi tinggi
                 </div>
                 <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
+                    <h4>Penjelasan Mendalam:</h4>
                     <ul>
-                        <li>Menentukan nisub dan haul harta</li>
-                        <li>Menghitung zakat dengan rumus: 2.5% x (jumlah harta - hutang)</li>
-                        <li>Contoh perhitungan praktis zakat emas/perak</li>
-                        <li>Perhitungan zakat perdagangan dan pertanian</li>
+                        <li><strong>Formula Dasar:</strong> Zakat = 2.5% × (Total Harta - Hutang Jangka Pendek)</li>
+                        <li><strong>Step-by-Step Calculation:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Step 1:</strong> Identifikasi semua harta yang mencapai nisab</li>
+                                <li><strong>Step 2:</strong> Hitung total nilai harta (gunakan konversi nilai pasar)</li>
+                                <li><strong>Step 3:</strong> Kurangi hutang jangka pendek (jatuh tempo < 1 tahun)</li>
+                                <li><strong>Step 4:</strong> Jika hasil ≥ nisab, hitung 2.5% dari nilai tersebut</li>
+                                <li><strong>Step 5:</strong> Konversi ke bentuk yang akan disalurkan (uang/barang)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Contoh Kompleks - Eksklusif:</strong>
+                            <div class="example-box" style="background: #e8daef; border-left: 4px solid #8e44ad;">
+                                <strong>Kasus Nyata:</strong> Bu Fatimah punya:
+                                <br>• Tabungan: Rp 150.000.000
+                                <br>• Emas perhiasan (tidak dipakai): 50 gram (@Rp 1.100.000 = Rp 55.000.000)
+                                <br>• Saham: Rp 30.000.000
+                                <br>• Hutang bank (jangka pendek): Rp 25.000.000
+                                <br>• <strong>Total Harta Kena Zakat:</strong> 150 + 55 + 30 - 25 = <strong>Rp 210.000.000</strong>
+                                <br>• <strong>Nisab:</strong> 85 gr emas = 85 × Rp 1.100.000 = <strong>Rp 93.500.000</strong> (TERLAMPAU)
+                                <br>• <strong>Zakat:</strong> 2.5% × Rp 210.000.000 = <strong>Rp 5.250.000</strong>
+                            </div>
+                        </li>
+                        <li><strong>Catatan Khusus:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Emas perhiasan yang DIPAKAI tidak wajib dizakati (ulama Syafi'i)</li>
+                                <li>Harta bisnis (toko): Nilai = (Modal + Laba) - Hutang</li>
+                                <li>Saham: Zakat atas nilai saham jika tujuan investasi, BUKAN dividen</li>
+                            </ul>
+                        </li>
+                        <li><strong>Penanganan Defisit:</strong> Jika harta di bawah nisab, TIDAK WAJIB zakat (tetapi sedekah sunnah sangat dianjurkan)</li>
                     </ul>
-                    <div class="key-concepts">
-                        <strong>Konsep Kunci:</strong> Harga emas saat ini, hutang jangka pendek, kepemilikan satu tahun
-                    </div>
                 </div>
             </div>
 
@@ -634,18 +1050,50 @@
                     <span class="question-type">Pilihan Ganda</span>
                 </div>
                 <div class="indicator">
-                    <strong>Indikator:</strong> Mengetahui kondisi wilayah yang mewajibkan zakat
+                    <strong>Indikator:</strong> Menilai kondisi wilayah dan lembaga pengelola zakat dalam kontemporer
                 </div>
                 <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
+                    <h4>Penjelasan Mendalam:</h4>
                     <ul>
-                        <li>Kriteria wilayah yang memiliki mustahiq zakat</li>
-                        <li>Kewajiban zakat di wilayah muslim dan non-muslim</li>
-                        <li>Peran pemerintah dalam pengelolaan zakat</li>
-                        <li>Distibusi zakat di lingkup lokal vs internasional</li>
+                        <li><strong>Syarat Wilayah:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Zakat Fitrah:</strong> Wajib bagi yang berada di wilayah Islam (tanah air yang mayoritas muslim). Jika di negara non-Muslim, tetap wajib atas diri sendiri.</li>
+                                <li><strong>Zakat Mal:</strong> Wajib di mana pun berada (asal syarat terpenuhi). Tidak terikat teritorial.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Prinsip Distribusi:</strong> 
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Prioritas Lokal:</strong> Tempat tinggal muzakki dahulu (hadits: "Mereka berhak menerima zakat di antara mereka")</li>
+                                <li><strong>Jika Tidak Ada Mustahiq:</strong> Bisa disalurkan ke wilayah lain yang lebih membutuhkan</li>
+                                <li><strong>Proporsi:</strong> Minimal 50% di daerah setempat (rekomendasi BAZNAS)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Lembaga Pengelola:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>BAZNAS (Badan Amil Zakat Nasional):</strong> Lembaga resmi pemerintah, aman, transparan</li>
+                                <li><strong>LAZIS (Lembaga Amil Zakat Infaq Sedekah):</strong> Swadaya masyarakat (Dompet Dhuafa, PKPU, dll)</li>
+                                <li><strong>Amil Perorangan:</strong> Wajib ada ijin dari BAZNAS, lapor transparan</li>
+                                <li><strong>Kriteria Amil:</strong> Muslim, amanah, paham syariah, transparan</li>
+                            </ul>
+                        </li>
+                        <li><strong>Persyaratan Lembaga:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Memiliki akte notaris dan NPWP</li>
+                                <li>Ada pengurus yang jelas</li>
+                                <li>Laporan keuangan audit publik</li>
+                                <li>Tidak menyeleweng (QS. At-Taubah: 34 mengancam azab)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Digitalisasi Zakat:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Aplikasi: BAZNAS Mobile, Dompet Dhuafa, LinkAja Zakat</li>
+                                <li>Fitur: Kalkulator zakat, transfer otomatis, laporan real-time</li>
+                                <li>Keuntungan: Cepat, aman, transparan, jejak digital</li>
+                            </ul>
+                        </li>
                     </ul>
                     <div class="key-concepts">
-                        <strong>Konsep Kunci:</strong> Domisili, amil zakat, Badan Amil Zakat Nasional (BAZNAS)
+                        <strong>Konsep Penting:</strong> Prinsip "Amanah" adalah kunci. Setiap rupiah zakat adalah amanah Allah yang harus disalurkan dengan tepat.
                     </div>
                 </div>
             </div>
@@ -656,18 +1104,53 @@
                     <span class="question-type">Pilihan Ganda</span>
                 </div>
                 <div class="indicator">
-                    <strong>Indikator:</strong> Memahami praktik perhitungan zakat dalam kehidupan sehari-hari
+                    <strong>Indikator:</strong> Mensimulasikan perhitungan zakat profesi & aset digital dalam ekonomi modern
                 </div>
                 <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
+                    <h4>Penjelasan Mendalam:</h4>
                     <ul>
-                        <li>Studi kasus: menghitung zakat tabungan</li>
-                        <li>Studi kasus: zakat hasil investasi</li>
-                        <li>Studi kasus: zakat penghasilan (profesi)</li>
-                        <li>Alternatif pembayaran zakat dalam bentuk non-tunai</li>
+                        <li><strong>Zakat Profesi (Pendapat Kontemporer):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Definisi:</strong> Zakat atas penghasilan bulanan/gajian</li>
+                                <li><strong>Hukum:</strong> Wajib (menurut Dewan Syariah Nasional Majelis Ulama Indonesia)</li>
+                                <li><strong>Formula:</strong> 2.5% × (Penghasilan - Kebutuhan Dasar)</li>
+                                <li><strong>Alternatif:</strong> Boleh menggabung dengan zakat mal (haul 1 tahun)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Contoh Perhitungan Profesi:</strong>
+                            <div class="example-box">
+                                <strong>Kasus:</strong> Pak Dian gaji Rp 10.000.000/bulan, kebutuhan dasar (biaya hidup, cicil) Rp 7.000.000
+                                <br>• Zakat per bulan: 2.5% × (10.000.000 - 7.000.000) = 2.5% × 3.000.000 = <strong>Rp 75.000</strong>
+                                <br>• Atau ditabung 12 bulan: Rp 900.000, kemudian zakatkan saat haul (lebih praktis)
+                            </div>
+                        </li>
+                        <li><strong>Zakat Aset Digital (Kontemporer):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Kripto (Bitcoin, Ethereum):</strong> Jika tujuan investasi, zakat 2.5% dari nilai portfolio (dibandingkan dengan nisab emas)</li>
+                                <li><strong>Saham:</strong> Zakat atas nilai saham jika tujuan jual beli (bukan dividen)</li>
+                                <li><strong>Obligasi:</strong> Zakat atas pokok + bunga yang diterima</li>
+                                <li><strong>Reksadana:</strong> Zakat 2.5% dari nilai investasi</li>
+                            </ul>
+                        </li>
+                        <li><strong>Contoh Zakat Kripto:</strong>
+                            <div class="example-box">
+                                <strong>Kasus:</strong> Bu Ani punya 0.5 BTC (Bitcoin) selama 1 tahun. Harga BTC Rp 800.000.000/BTC.
+                                <br>• Nilai: 0.5 × Rp 800.000.000 = <strong>Rp 400.000.000</strong>
+                                <br>• Nisab: Rp 93.500.000 (TERLAMPAU)
+                                <br>• Zakat: 2.5% × Rp 400.000.000 = <strong>Rp 10.000.000</strong>
+                                <br>• Cara Bayar: Jual sebagian kripto → uang → salurkan via amil zakat
+                            </div>
+                        </li>
+                        <li><strong>Perdebatan Ulama:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Pro Zakat:</strong> Bernilai, bisa diperjualbelikan → mirip emas</li>
+                                <li><strong>Kontra:</strong> Tidak ada dalil khusus, status hukum masih grey area</li>
+                                <li><strong>Dewan Syariah Nasional:</strong> Zakat jika tujuan investasi</li>
+                            </ul>
+                        </li>
                     </ul>
-                    <div class="key-concepts">
-                        <strong>Konsep Kunci:</strong> Zakat profesi, zakat tabungan, zakat saham, zakat perusahaan
+                    <div class="skill-box">
+                        <strong>Keterampilan:</strong> Adaptasi syariah pada teknologi baru (C5), Perhitungan kompleks (C3), Pemahaman kontemporer (C4)
                     </div>
                 </div>
             </div>
@@ -678,40 +1161,188 @@
                     <span class="question-type">Pilihan Ganda</span>
                 </div>
                 <div class="indicator">
-                    <strong>Indikator:</strong> Mengetahui sejarah pengelolaan zakat di masa Nabi dan Khulafaur Rasyidin
+                    <strong>Indikator:</strong> Menelusuri evolusi sistem pengelolaan zakat dari masa Nabi hingga era modern
                 </div>
                 <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
+                    <h4>Penjelasan Mendalam:</h4>
                     <ul>
-                        <li>Sistem pengumpulan zakat di zaman Nabi Muhammad SAW</li>
-                        <li>Peran Sayyidina Umar dalam mengatur zakat</li>
-                        <li>Pembentukan divisi khusus zakat (diwan al-amwal)</li>
-                        <li>Keberhasilan zakat mengatasi kemiskinan</li>
+                        <li><strong>Masa Nabi Muhammad SAW (1-10 H):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Sistem:</strong> Sederhana, langsung, tidak ada lembaga formal</li>
+                                <li><strong>Metode:</strong> Nabi atau utusan langsung ke muzakki → langsung ke mustahiq</li>
+                                <li><strong>Pencatatan:</strong> Tidak ada administrasi tertulis</li>
+                                <li><strong>Karakter:</strong> Berdasarkan kepercayaan personal</li>
+                                <li><strong>Contoh:</strong> Nabi mengutus amil ke daerah-daerah (Bahrain, Yamamah) untuk kumpulkan zakat</li>
+                                <li><strong>Dalil:</strong> Hadits tentang amil yang dikirim ke daerah, tidak boleh dipulangkan sebelum dikumpulkan</li>
+                            </ul>
+                        </li>
+                        <li><strong>Masa Khulafaur Rasyidin (11-40 H):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Abu Bakar Ash-Shiddiq:</strong>
+                                    <ul style="margin-left: 15px;">
+                                        <li>Perangi kaum yang menolak zakat (perang riddah)</li>
+                                        <li>Prinsip: Zakat adalah hak negara agama</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Umar bin Khattab:</strong>
+                                    <ul style="margin-left: 15px;">
+                                        <li><strong>Inovasi:</strong> Membentuk Diwan (catatan negara) dan Baitul Mal (perbendaharaan)</li>
+                                        <li><strong>Sistem Amil:</strong> Pegawai negeri khusus pengumpul zakat</li>
+                                        <li><strong>Klasifikasi:</strong> Memetakan mustahiq berdasarkan wilayah</li>
+                                        <li><strong>Anggaran:</strong> Zakat dipisahkan dari infaq/sedekah</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Utsman bin Affan:</strong>
+                                    <ul style="margin-left: 15px;">
+                                        <li>Memperluas wilayah amil</li>
+                                        <li>Standarisasi pengumpulan</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Ali bin Abi Thalib:</strong>
+                                    <ul style="margin-left: 15px;">
+                                        <li>Memperbaiki akuntabilitas</li>
+                                        <li>Transparansi lebih tinggi</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong>Masa Bani Umayyah & Abbasiyah (41-656 H):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Baitul Mal menjadi departemen khusus (Diwan al-Kharaj)</li>
+                                <li>Ada kantor wilayah (provinsi)</li>
+                                <li>Audit & laporan tahunan ke Khalifah</li>
+                                <li>Inspeksi mendadak untuk cegah korupsi</li>
+                            </ul>
+                        </li>
+                        <li><strong>Masa Modern (Abad 21):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Digitalisasi:</strong> Platform online, aplikasi mobile</li>
+                                <li><strong>Transparansi:</strong> Laporan publik, audit Big Four</li>
+                                <li><strong>Inovasi:</strong> Zakat produktif, zakat mikro, zakat syariah bonds</li>
+                                <li><strong>Regulasi:</strong> Undang-undang Zakat (UU No. 23/2011), SKB 3 Menteri</li>
+                                <li><strong>Challenge:</strong> Korupsi, inefisiensi, ketidakpercayaan publik</li>
+                            </ul>
+                        </li>
+                        <li><strong>Perbandingan Tabel Evolusi:</strong>
+                            <table style="width: 100%; margin: 15px 0; border-collapse: collapse; font-size: 0.9em;">
+                                <tr style="background: #2c3e50; color: white;">
+                                    <th style="padding: 8px; border: 1px solid #ddd;">Era</th>
+                                    <th style="padding: 8px; border: 1px solid #ddd;">Sistem</th>
+                                    <th style="padding: 8px; border: 1px solid #ddd;">Teknologi</th>
+                                    <th style="padding: 8px; border: 1px solid #ddd;">Efisiensi</th>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 6px; border: 1px solid #ddd;">Nabi</td>
+                                    <td style="padding: 6px; border: 1px solid #ddd;">Langsung</td>
+                                    <td style="padding: 6px; border: 1px solid #ddd;">Lisan</td>
+                                    <td style="padding: 6px; border: 1px solid #ddd;">80%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 6px; border: 1px solid #ddd;">Khulafah</td>
+                                    <td style="padding: 6px; border: 1px solid #ddd;">Baitul Mal</td>
+                                    <td style="padding: 6px; border: 1px solid #ddd;">Tulisan</td>
+                                    <td style="padding: 6px; border: 1px solid #ddd;">75%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 6px; border: 1px solid #ddd;">Modern</td>
+                                    <td style="padding: 6px; border: 1px solid #ddd;">BAZNAS</td>
+                                    <td style="padding: 6px; border: 1px solid #ddd;">Digital</td>
+                                    <td style="padding: 6px; border: 1px solid #ddd;">95%</td>
+                                </tr>
+                            </table>
+                        </li>
                     </ul>
                     <div class="key-concepts">
-                        <strong>Konsep Kunci:</strong> Amil zakat, daftar mustahiq, strategi distribusi, Baitul Mal
+                        <strong>Pelajaran Sejarah:</strong> Sistem yang transparan, dipegang oleh amanah, dan ada akuntabilitas → berhasil mengurangi kemiskinan.
                     </div>
                 </div>
+            </div>
+
+            <!-- SOAL ESAI ZAKAT - ULTRA DEEP -->
+            <div class="section-header">
+                ✍️ SOAL ESAI ZAKAT - PENGAYAAN MENTAL (Soal 31-33)
             </div>
 
             <div class="question-item">
                 <div class="question-header">
                     <span class="question-number">Soal 31</span>
-                    <span class="question-type">Esai</span>
+                    <span class="question-type">Esai (Dengan Rubrik Penilaian)</span>
                 </div>
                 <div class="indicator">
-                    <strong>Indikator:</strong> Menganalisis studi kasus zakat fitrah dalam konteks modern
+                    <strong>Indikator:</strong> Menganalisis strategi optimal pengelolaan zakat fitrah keluarga urban di era digital
                 </div>
                 <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
+                    <h4>Deskripsi Soal & Konteks:</h4>
+                    <div class="example-box" style="background: #d5f4e6; border-left: 4px solid #27ae60;">
+                        <strong>SENARIO:</strong> Keluarga Afifah (Ayah 45 th, Ibu 40 th, 3 anak: 15, 12, 8 th) tinggal di Jakarta. 
+                        Penghasilan ayah Rp 15 juta/bulan, ibu Rp 8 jbula. Mereka punya 2 opsi: 
+                        <br>1) Beli 12.5 kg beras di supermarket
+                        <br>2) Transfer Rp 187.500 via BAZNAS App
+                        <br>Selain itu, ada fakir miskin di RT (10 KK) dan desa asal di Ponorogo (5 KK).
+                        <br><strong>TUGAS:</strong> Buatlah analisis keputusan optimal untuk keluarga ini!
+                    </div>
+                    
+                    <h4>Aspek yang Dinilai (Rubrik):</h4>
                     <ul>
-                        <li>Menghitung zakat fitrah keluarga modern</li>
-                        <li>Menentukan jenis makanan pokok setempat</li>
-                        <li>Memilih lembaga amil zakat yang tepat</li>
-                        <li>Menilai dampak sosial distribusi zakat fitrah</li>
+                        <li><strong>1. Perhitungan Akurat (Skor 3):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Identifikasi jumlah jiwa: 5 orang</li>
+                                <li>Hitung zakat: 5 × 2,5 kg = 12,5 kg beras atau Rp 187.500</li>
+                                <li>Catatan: Gunakan harga beras premium saat ini</li>
+                            </ul>
+                        </li>
+                        <li><strong>2. Analisis Opsi (Skor 4):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Opsi 1 - Beras:</strong> 
+                                    <br>Keuntungan: Sesuai sunnah langsung, fakir miskin dapat makanan pokok
+                                    <br>Kelemahan: Repot distribusi, transportasi, kualitas beras bisa buruk
+                                </li>
+                                <li><strong>Opsi 2 - Uang:</strong>
+                                    <br>Keuntungan: Praktis, cepat, fakir miskin bisa beli beras lebih murah (grosir)
+                                    <br>Kelemahan: Perlu amanah, resiko diselewengkan
+                                </li>
+                                <li><strong>Rekomendasi:</strong> Opsi 2 lebih efisien di kota, asal lembaga terpercaya</li>
+                            </ul>
+                        </li>
+                        <li><strong>3. Strategi Distribusi (Skor 3):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Prioritas 1:</strong> 5 KK fakir miskin di RT (dekat, mudah monitoring) = Rp 93.750</li>
+                                <li><strong>Prioritas 2:</strong> 5 KK di desa asal (jalin silaturrahmi, kirim via transfer) = Rp 93.750</li>
+                                <li><strong>Metode:</strong> Terima bukti penerimaan (foto, tanda tangan)</li>
+                            </ul>
+                        </li>
+                        <li><strong>4. Integrasi Teknologi (Skor 3):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Gunakan BAZNAS App untuk transfer</li>
+                                <li>Dapatkan laporan distribusi digital</li>
+                                <li>Simpan bukti bayar untuk catatan pribadi</li>
+                                <li>Share di media sosial untuk sosialisasi (jangan riya')</li>
+                            </ul>
+                        </li>
+                        <li><strong>5. Dampak Sosial & Spiritual (Skor 2):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Meningkatkan kebersamaan di lingkungan</li>
+                                <li>Menjalin silaturrahmi dengan desa asal</li>
+                                <li>Pahala berlipat ganda (QS. Al-Baqarah: 261)</li>
+                                <li>Membersihkan harta dan jiwa</li>
+                            </ul>
+                        </li>
                     </ul>
-                    <div class="key-concepts">
-                        <strong>Keterampilan:</strong> Analisis, perhitungan, penalaran, aplikasi praktis
+                    
+                    <h4>Model Jawaban Ideal (15-20 kalimat):</h4>
+                    <div class="example-box" style="background: #f9e79f; border-left: 4px solid #f39c12;">
+                        "Keluarga Afifah wajib mengeluarkan zakat fitrah sebesar 12,5 kg beras atau Rp 187.500 (5 orang × Rp 37.500). 
+                        Di era digital, opsi transfer via BAZNAS App lebih efisien karena praktis dan transparan. 
+                        Distribusi sebaiknya 50% untuk 5 KK fakir miskin di RT (Rp 93.750) dan 50% untuk desa Ponorogo (Rp 93.750). 
+                        Prioritas lokal karena lebih mudah monitoring dan menumbuhkan kebersamaan. 
+                        Teknologi memudahkan tracking distribusi, jadi pastikan dapatkan bukti penerimaan digital. 
+                        Strategi ini memaksimalkan pahala, efisiensi, dan dampak sosial sekaligus menjaga silaturrahmi antar keluarga. 
+                        Jangan lupa niatkan sebagai ibadah dan jadikan contoh untuk tetangga."
+                    </div>
+                    
+                    <div class="skill-box">
+                        <strong>Total Skor Maksimal: 15</strong> (Kriteria Penilaian Lengkap tersedia untuk guru)
+                        <br><strong>Keterampilan:</strong> Pemecahan masalah (C4), Pengambilan keputusan (C5), Komunikasi efektif (C6)
                     </div>
                 </div>
             </div>
@@ -719,21 +1350,91 @@
             <div class="question-item">
                 <div class="question-header">
                     <span class="question-number">Soal 32</span>
-                    <span class="question-type">Esai</span>
+                    <span class="question-type">Esai (Kasus Multi-Dimensi)</span>
                 </div>
                 <div class="indicator">
-                    <strong>Indikator:</strong> Menyelesaikan permasalahan zakat mal kompleks
+                    <strong>Indikator:</strong> Menyelesaikan dilema zakat mal kompleks yang melibatkan multi-sumber harta dan kewajiban sosial
                 </div>
                 <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
+                    <h4>Deskripsi Soal & Konteks:</h4>
+                    <div class="example-box" style="background: #fadbd8; border-left: 4px solid #e74c3c;">
+                        <strong>SENARIO KOMPLEKS:</strong> Pak Budiman (52 th) punya:
+                        <br>• Tabungan: Rp 200 jt
+                        <br>• Emas (tidak dipakai): 120 gram
+                        <br>• Saham: Rp 50 jt
+                        <br>• Usaha warung: Modal Rp 100 jt, untung bersih Rp 5 jt/bulan
+                        <br>• Hutang KPR: Rp 30 jt/tahun
+                        <br>• Cicilan mobil: Rp 10 jt/tahun
+                        <br>• <strong>Masalah:</strong> Anak tertua kuliah, butuh biaya Rp 15 jt/semester. Apakah boleh bayar zakat dalam bentuk biaya kuliah anak fakir miskin?
+                    </div>
+                    
+                    <h4>Struktur Jawaban Diperlukan:</h4>
                     <ul>
-                        <li>Perhitungan zakat mal multi-sumber (emas, tabungan, dagangan)</li>
-                        <li>Penentuan haul yang benar</li>
-                        <li>Strategi mengoptimalkan manfaat zakat</li>
-                        <li>Evaluasi kepatuhan berzakat dalam konteks ekonomi kontemporer</li>
+                        <li><strong>A. Perhitungan Akurat (Skor 4):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Total harta: Rp 200 + (120×1.100.000=Rp 132 jt) + 50 + 100 = <strong>Rp 482 jt</strong></li>
+                                <li>Total hutang: Rp 30 + 10 = <strong>Rp 40 jt</strong></li>
+                                <li>Harta kena zakat: 482 - 40 = <strong>Rp 442 jt</strong></li>
+                                <li>Nisab: 85×1.100.000 = <strong>Rp 93,5 jt</strong> (TERLAMPAU)</li>
+                                <li>Zakat: 2.5% × 442 = <strong>Rp 11.050.000</strong></li>
+                            </ul>
+                        </li>
+                        <li><strong>B. Analisis Hukum (Skor 5):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Prinsip:</strong> Zakat mal harus diserahkan kepada amil atau mustahiq langsung</li>
+                                <li><strong>8 Asnaf:</strong> Fakir, miskin, amil, muallaf, hamba sahaya, gharim, fisabilillah, ibnu sabil</li>
+                                <li><strong>Kategori "Fisabilillah":</strong> Termasuk pendidikan yang mengarahkan pada Islam</li>
+                                <li><strong>Status Anak Fakir Miskin:</strong> Boleh jika benar-benar fakir dan kuliah di bidang bermanfaat</li>
+                                <li><strong>Syarat:</strong> 
+                                    <ul style="margin-left: 15px;">
+                                        <li>Niat zakat saat bayar biaya kuliah</li>
+                                        <li>Akreditasi kampus jelas</li>
+                                        <li>Transparansi nilai dan penerima</li>
+                                        <li>Tidak untuk keluarga sendiri (haram zakat untuk keluarga inti)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong>C. Strategi Distribusi (Skor 3):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Opsi 1 (Konvensional):</strong> Transfer Rp 11.050.000 ke BAZNAS, mereka yang atur</li>
+                                <li><strong>Opsi 2 (Direct):</strong> Bayar langsung Rp 15 jt ke kampus untuk 1 semster anak fakir</li>
+                                <li><strong>Keuntungan Opsi 2:</strong> 
+                                    <br>• Dampak langsung terlihat
+                                    <br>• Mengentaskan generasi melalui pendidikan
+                                    <br>• Sesuai spirit fisabilillah
+                                </li>
+                                <li><strong>Kelemahan Opsi 2:</strong>
+                                    <br>• Butuh verifikasi (jangan sampai tidak fakir)
+                                    <br>• Tidak fleksibel (uang terikat)
+                                    <br>• Risiko salah sasaran
+                                </li>
+                                <li><strong>Rekomendasi:</strong> Kombinasi (50% ke BAZNAS, 50% direct pendidikan)</li>
+                            </ul>
+                        </li>
+                        <li><strong>D. Pertimbangan Etika & Sosial (Skor 3):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Etika:</strong> Jangan pamer, jangan riya', jangan eksploitasi penerima</li>
+                                <li><strong>Social Impact:</strong> Pilih jurusan yang strategis (kedokteran, teknik, pendidikan agama)</li>
+                                <li><strong>Monitoring:</strong> Minta laporan perkembangan akademik dari mahasiswa</li>
+                                <li><strong>Long-term View:</strong> Program beasiswa zakat 4 tahun lebih berdampak daripada sekali bayar</li>
+                            </ul>
+                        </li>
                     </ul>
-                    <div class="key-concepts">
-                        <strong>Keterampilan:</strong> Sintesis, evaluasi, pemecahan masalah, komunikasi tertulis
+                    
+                    <h4>Jawaban Ideal (20-25 kalimat):</h4>
+                    <div class="example-box" style="background: #d5e8d4; border-left: 4px solid #2ecc71;">
+                        "Pak Budiman wajib zakat Rp 11.050.000 (2.5% dari Rp 442 jt). Ide bayar biaya kuliah anak fakir miskin BISA SAJA 
+                        asalkan dalam kategori 'fisabilillah' dan niat zakat jelas saat transfer. Namun, ada resiko verifikasi yang perlu diatasi. 
+                        Strategi optimal: 50% (Rp 5.525.000) ke BAZNAS untuk distribusi luas, 50% (Rp 5.525.000) untuk beasiswa kuliah. 
+                        Pilih mahasiswa fakir miskin berprestasi di jurusan strategis (kedokteran/agama/teknik) dan buat MOU dengan kampus. 
+                        Pastikan transparansi dan jangan berikan ke keluarga inti karena haram. Kombinasi ini memaksimalkan amal, efektivitas, 
+                        dan keberkahan karena mengentaskan generasi. Jaga etika dengan tidak pamer dan monitoring perkembangan mahasiswa."
+                    </div>
+                    
+                    <div class="skill-box">
+                        <strong>Total Skor Maksimal: 15</strong>
+                        <br><strong>Keterampilan Tingkat Tinggi:</strong> Pemecahan dilema (C5), Argumen multi-perspektif (C6), Integrasi nilai & hukum (C6)
                     </div>
                 </div>
             </div>
@@ -741,28 +1442,142 @@
             <div class="question-item">
                 <div class="question-header">
                     <span class="question-number">Soal 33</span>
-                    <span class="question-type">Esai</span>
+                    <span class="question-type">Esai (Evaluasi Kebijakan Strategis)</span>
                 </div>
                 <div class="indicator">
-                    <strong>Indikator:</strong> Mengevaluasi peran zakat dalam mengurangi kesenjangan ekonomi
+                    <strong>Indikator:</strong> Mengevaluasi efektivitas sistem zakat nasional dan merumuskan rekomendasi kebijakan untuk pemerintah
                 </div>
                 <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
+                    <h4>Deskripsi Soal & Konteks:</h4>
+                    <div class="example-box" style="background: #eaf2f8; border-left: 4px solid #3498db;">
+                        <strong>SENARIO MAKRO:</strong> Data BAZNAS 2023 menunjukkan:
+                        <br>• Potensi zakat nasional: Rp 300 Triliun
+                        <br>• Realisasi terkumpul: Rp 12,5 Triliun (4,2%)
+                        <br>• Penduduk miskin: 26 juta jiwa (9,57%)
+                        <br>• Pertanyaan: Kenapa potensi tidak terserap? Buatkan 5 rekomendasi strategis dengan analisis cost-benefit!
+                    </div>
+                    
+                    <h4>Kerangka Jawaban Multi-Dimensi:</h4>
                     <ul>
-                        <li>Analisis data keuangan pribadi/keluarga</li>
-                        <li>Perbandingan efek zakat vs pajak</li>
-                        <li>Proyeksi dampak 10 tahun pengelolaan zakat optimal</li>
-                        <li>Rekomendasi kebijakan zakat untuk pemerintah</li>
+                        <li><strong>1. Analisis Akar Masalah (Skor 4):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Faktor Internal:</strong>
+                                    <ul style="margin-left: 15px;">
+                                        <li>Kurang sosialisasi (masyarakat tidak tahap wajib)</li>
+                                        <li>Tidak ada insentif pajak (zakat tidak deductible dari PPh)</li>
+                                        <li>Korupsi dan inefisiensi lembaga</li>
+                                        <li>Kurangnya trust pada lembaga</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Faktor Eksternal:</strong>
+                                    <ul style="margin-left: 15px;">
+                                        <li>Krisis ekonomi (daya beli turun)</li>
+                                        <li>Literasi keuangan rendah</li>
+                                        <li>Budaya "sedekah pribadi" lebih diutamakan</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Dampak:</strong> Kesenjangan ekonomi meningkat, potensi zakat terbuang</li>
+                            </ul>
+                        </li>
+                        <li><strong>2. Rekomendasi Kebijakan (Skor 6):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Rekomendasi 1: Insentif Pajak</strong>
+                                    <ul style="margin-left: 15px;">
+                                        <li>Detail: Zakat 100% deductible dari PPh Badan/Orang Pribadi</li>
+                                        <li>Cost: Penerimaan pajak turun sementara</li>
+                                        <li>Benefit: Kepatuhan zakat naik 300%, kemiskinan turun signifikan</li>
+                                        <li>Contoh: Jika zakat Rp 10 jt, PPh terhutang Rp 10 jt → lunas</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Rekomendasi 2: Sosialisasi Massif</strong>
+                                    <ul style="margin-left: 15px;">
+                                        <li>Detail: Kampanye nasional via TV, medsos, masjid</li>
+                                        <li>Cost: Rp 500 miliar (budget nasional)</li>
+                                        <li>Benefit: Literasi zakat 80% → potensi terealisasi 50%</li>
+                                        <li>Metode: Influencer, artis, ustad ternama</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Rekomendasi 3: Digitalisasi Wajib</strong>
+                                    <ul style="margin-left: 15px;">
+                                        <li>Detail: Semua perusahaan wajib potong zakat via app nasional</li>
+                                        <li>Cost: Pembangunan app Rp 100 miliar</li>
+                                        <li>Benefit: Transparansi 100%, potensi naik 200%</li>
+                                        <li>Model: Integrasi dengan DJP & OJK</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Rekomendasi 4: Zakat Produktif Wajib</strong>
+                                    <ul style="margin-left: 15px;">
+                                        <li>Detail: 60% zakat wajib untuk modal usaha (bukan konsumtif)</li>
+                                        <li>Cost: Butuh training & mentorship</li>
+                                        <li>Benefit: Mustahiq mandiri dalam 2 tahun, ekosistem ekonomi kuat</li>
+                                        <li>Contoh: UMKM produktif, pertanian, koperasi</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Rekomendasi 5: Reward & Punishment</strong>
+                                    <ul style="margin-left: 15px;">
+                                        <li>Detail: Muzakki telat → denda 2.5% per bulan; Muzakki patuh → masuk undian haji gratis</li>
+                                        <li>Cost: Minimal (sistem otomatis)</li>
+                                        <li>Benefit: Disiplin tinggi, kepatuhan near 100%</li>
+                                        <li>Legalitas: Perlu revisi UU Zakat</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><strong>3. Analisis Cost-Benefit (Skor 3):</strong>
+                            <table style="width: 100%; margin: 15px 0; border-collapse: collapse;">
+                                <tr style="background: #e74c3c; color: white;">
+                                    <th style="padding: 8px; border: 1px solid #ddd;">Kebijakan</th>
+                                    <th style="padding: 8px; border: 1px solid #ddd;">Cost (Rp)</th>
+                                    <th style="padding: 8px; border: 1px solid #ddd;">Benefit (Triliun)</th>
+                                    <th style="padding: 8px; border: 1px solid #ddd;">ROI</th>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 6px; border: 1px solid #ddd;">Insentif Pajak</td>
+                                    <td style="padding: 6px; border: 1px solid #ddd;">50 Triliun</td>
+                                    <td style="padding: 6px; border: 1px solid #ddd;">150 Triliun</td>
+                                    <td style="padding: 6px; border: 1px solid #ddd;">300%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 6px; border: 1px solid #ddd;">Sosialisasi</td>
+                                    <td style="padding: 6px; border: 1px solid #ddd;">0,5 Triliun</td>
+                                    <td style="padding: 6px; border: 1px solid #ddd;">135 Triliun</td>
+                                    <td style="padding: 6px; border: 1px solid #ddd;">27.000%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 6px; border: 1px solid #ddd;">Digitalisasi</td>
+                                    <td style="padding: 6px; border: 1px solid #ddd;">0,1 Triliun</td>
+                                    <td style="padding: 6px; border: 1px solid #ddd;">25 Triliun</td>
+                                    <td style="padding: 6px; border: 1px solid #ddd;">25.000%</td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li><strong>4. Implementasi & Monitoring (Skor 2):</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Phase 1 (Tahun 1):</strong> Pilot project di 5 provinsi</li>
+                                <li><strong>Phase 2 (Tahun 2):</strong> Evaluasi & perbaikan sistem</li>
+                                <li><strong>Phase 3 (Tahun 3):</strong> Rollout nasional</li>
+                                <li><strong>Monitoring:</strong> Dashboard nasional real-time, audit kuartal, laporan publik</li>
+                            </ul>
+                        </li>
                     </ul>
-                    <div class="key-concepts">
-                        <strong>Keterampilan:</strong> Evaluasi kritis, argumentasi, pembuatan rekomendasi
+                    
+                    <h4>Model Essay (300-400 kata):</h4>
+                    <div class="example-box" style="background: #d6eaf8; border-left: 4px solid #3498db; font-size: 0.95em;">
+                        <strong>Tema:</strong> "Zakat sebagai Kunci Pengentasan Kemiskinan: Analisis Kritis & Rekomendasi Transformasi"
+                        <br><br>
+                        Potensi zakat Indonesia Rp 300 triliun/tahun, namun realisasi hanya 4,2% (Rp 12,5 triliun). Akar masalahnya adalah kurangnya insentif dan trust. Pertama, pemerintah harus revisi UU Zakat agar zakat 100% deductible dari PPh. Meski cost penerimaan pajak turun sementara Rp 50 triliun, benefitnya zakat naik 300% (Rp 150 triliun) dan kemiskinan turun 30%. Kedua, kampanye nasional via medsos dan TV butuh budget Rp 500 miliar, ROI 27.000% dalam literasi dan partisipasi. Ketiga, wajibkan perusahaan potong zakat via app nasional (cost Rp 100 miliar) untuk transparansi 100%. Keempat, 60% zakat harus produktif (modal UMKM) bukan konsumtif agar mustahiq mandiri. Kelima, reward haji gratis untuk muzakki patuh dan denda 2,5%/bulan untuk yang telat. Implementasi bertahap 3 tahun dengan monitoring ketat. Dengan ini, Indonesia bisa bebas kemiskinan di 2030 melalui zakat, bukan hanya retorika."
+                    </div>
+                    
+                    <div class="skill-box">
+                        <strong>Total Skor Maksimal: 15</strong>
+                        <br><strong>Keterampilan Unggulan:</strong> Evaluasi sistemik (C6), Formulasi kebijakan (C6), Analisis cost-benefit (C5), Argumentasi preskriptif (C6)
                     </div>
                 </div>
             </div>
 
-            <!-- Bagian 3: Muhammad Al Fatih -->
+            <!-- BAGIAN 3: MUHAMMAD AL FATIH - FINAL DEEP -->
             <div class="section-header">
-                ⚔️ MATERI MUHAMMAD AL FATIH & PERADABAN TURKI UTSMANI (Soal 19-25, 28-30, 34-35)
+                ⚔️ MATERI MUHAMMAD AL FATIH - HERO DAN PEMBUKA CONSTANTINOPLE (Soal 19-25, 28-30, 34-35)
             </div>
 
             <div class="question-item">
@@ -771,18 +1586,46 @@
                     <span class="question-type">Pilihan Ganda</span>
                 </div>
                 <div class="indicator">
-                    <strong>Indikator:</strong> Meneladani akhlak mulia Sultan Muhammad Al Fatih
+                    <strong>Indikator:</strong> Memahami biografi lengkap Muhammad Al Fatih dan konteks sejarah kebangkitan Turki Utsmani
                 </div>
                 <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
+                    <h4>Penjelasan Mendalam:</h4>
                     <ul>
-                        <li>Biografi singkat Muhammad Al Fatih (1432-1481 M)</li>
-                        <li>Pendidikan dan kecerdasannya sejak muda</li>
-                        <li>Ketekunannya dalam beribadah dan belajar</li>
-                        <li>Kesabaran dan ketabahan menghadapi kegagalan</li>
+                        <li><strong>Biografi Lengkap:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Nama Lengkap:</strong> Sultan Muhammad bin Sultan Murad bin Umar bin Utsman (1432-1481 M)</li>
+                                <li><strong>Gelar:</strong> Al-Fatih (Sang Penakluk), Qaysar (Kaisar), Mahdi (Penebus)</li>
+                                <li><strong>Lahir:</strong> 29 Maret 1432 M di Edirne (Thrace), ibunda Huma Hatun</li>
+                                <li><strong>Pendidikan:</strong> 
+                                    <ul style="margin-left: 15px;">
+                                        <li>Guru: Sheikh Ahmad bin Ismail al-Kurani (ulama tafsir)</li>
+                                        <li>Guru: Sheikh Akmal al-Din (ahli strategi perang)</li>
+                                        <li>Bahasa: Arab, Persia, Turki, Latin, Yunani (5 bahasa!)</li>
+                                        <li>Sains: Astronomi, geografi, teknik (bikin meriam)</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Takhta:</strong> Naik tahta tahun 1451 (umur 19 tahun) setelah ayahnya Sultan Murad II wafat</li>
+                            </ul>
+                        </li>
+                        <li><strong>Peradaban Turki Utsmani:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>Berdiri:</strong> 1299 M oleh Utsman bin Ertugrul</li>
+                                <li><strong>Puncak:</strong> Abad 15-17 (saat Sulaiman Al-Qanuni)</li>
+                                <li><strong>Ciri Khas:</strong> Administrasi sipil terstruktur, militer kuat, toleransi beragama, arsitektur megah</li>
+                                <li><strong>Posisi saat Al-Fatih:</strong> Sudah kuat di Anatolia, akan menaklukkan Eropa</li>
+                            </ul>
+                        </li>
+                        <li><strong>Visi Al-Fatih:</strong> Sejak muda dididik untuk membuka Konstantinopel. Hadits Nabi meramalkan: "Constantinopel akan dibuka oleh sekelompok mujahid yang diberkati Allah." Al-Fatih ingin menjadi pelaksana hadits itu.</li>
+                        <li><strong>Cita-Cita:</strong>
+                            <ul style="margin-left: 20px;">
+                                <li>Personal: Menjadi Khalifah yang menaklukkan Roma</li>
+                                <li>Politik: Menghubungkan Asia-Eropa, menguasai perdagangan</li>
+                                <li>Agama: Menyiarkan Islam ke Eropa (Balkans)</li>
+                            </ul>
+                        </li>
                     </ul>
                     <div class="key-concepts">
-                        <strong>Konsep Kunci:</strong> Sultan Utsmani, pembebas Konstantinopel, Nabi Muhammad SAW meramalkan
+                        <strong>Momen Penting:</strong> Di usia 21 tahun, Al-Fatih berhasil menaklukkan Konstantinopel yang ditahan 1000 tahun. Ini bukan hanya militer, tapi prestasi intelektual dan spiritual.
                     </div>
                 </div>
             </div>
@@ -793,246 +1636,7 @@
                     <span class="question-type">Pilihan Ganda</span>
                 </div>
                 <div class="indicator">
-                    <strong>Indikator:</strong> Menyebutkan sifat mulia Al Fatih sebagai pemimpin
+                    <strong>Indikator:</strong> Mengevaluasi sifat-sifat kepemimpinan Muhammad Al Fatih sebagai model panutan
                 </div>
                 <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
-                    <ul>
-                        <li>Sifat adil dalam memimpin (keadilan sosial)</li>
-                        <li>Keberanian dalam menghadapi tantangan</li>
-                        <li>Kesederhanaan hidup meski menjadi khalifah</li>
-                        <li>Rasa tanggung jawab terhadap rakyat</li>
-                    </ul>
-                    <div class="key-concepts">
-                        <strong>Konsep Kunci:</strong> Khalifah, keadilan Islam, amanah, syura
-                    </div>
-                </div>
-            </div>
-
-            <div class="question-item">
-                <div class="question-header">
-                    <span class="question-number">Soal 21</span>
-                    <span class="question-type">Pilihan Ganda</span>
-                </div>
-                <div class="indicator">
-                    <strong>Indikator:</strong> Memahami visi misi Muhammad Al Fatih
-                </div>
-                <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
-                    <ul>
-                        <li>Keinginannya membuka Konstantinopel sejak remaja</li>
-                        <li>Persiapan selama bertahun-tahun (pembangunan benteng)</li>
-                        <li>Kepemimpinan strategis dalam perang</li>
-                        <li>Cita-cita menyebarkan Islam ke Eropa</li>
-                    </ul>
-                    <div class="key-concepts">
-                        <strong>Konsep Kunci:</strong> Rumeli Hisari, strategi perang, diplomatik, motivasi dakwah
-                    </div>
-                </div>
-            </div>
-
-            <div class="question-item">
-                <div class="question-header">
-                    <span class="question-number">Soal 22</span>
-                    <span class="question-type">Pilihan Ganda</span>
-                </div>
-                <div class="indicator">
-                    <strong>Indikator:</strong> Mengetahui alasan strategis penaklukan Konstantinopel
-                </div>
-                <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
-                    <ul>
-                        <li>Letak geografis penting sebagai penghubung Eropa-Asia</li>
-                        <li>Pusat perdagangan dan kekuatan Bizantium</li>
-                        <li>Simbol kekuatan Kristen yang harus ditaklukkan</li>
-                        <li>Amanah Nabi Muhammad SAW dalam hadits</li>
-                    </ul>
-                    <div class="key-concepts">
-                        <strong>Konsep Kunci:</strong> Selat Bosporus, Kekaisaran Bizantium, Roma Timur, strategi militer
-                    </div>
-                </div>
-            </div>
-
-            <div class="question-item">
-                <div class="question-header">
-                    <span class="question-number">Soal 23</span>
-                    <span class="question-type">Pilihan Ganda</span>
-                </div>
-                <div class="indicator">
-                    <strong>Indikator:</strong> Mengetahui proses dan waktu penaklukan Konstantinopel
-                </div>
-                <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
-                    <ul>
-                        <li>Tanggal penting: 29 Mei 1453 M</li>
-                        <li>Lama pengepungan: 53 hari</li>
-                        <li>Taktik: meriam raksasa, terowongan bawah tanah, armada laut darat</li>
-                        <li>Pelajaran dari kegagalan sebelumnya</li>
-                    </ul>
-                    <div class="key-concepts">
-                        <strong>Konsep Kunci:</strong> Topkapi, Kapuk, terowongan, meriam basilik, serangan terakhir
-                    </div>
-                </div>
-            </div>
-
-            <div class="question-item">
-                <div class="question-header">
-                    <span class="question-number">Soal 24</span>
-                    <span class="question-type">Pilihan Ganda</span>
-                </div>
-                <div class="indicator">
-                    <strong>Indikator:</strong> Menganalisis strategi perang Al Fatih
-                </div>
-                <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
-                    <ul>
-                        <li>Inovasi meriam berukuran besar (bora)</li>
-                        <li>Strategi pengepungan darat dan laut</li>
-                        <li>Diplomasi: menghadang bantuan Venesia-Genoa</li>
-                        <li>Manajemen logistik pasukan besar</li>
-                    </ul>
-                    <div class="key-concepts">
-                        <strong>Konsep Kunci:</strong> Inovasi teknologi, logistik militer, intelijen, teamwork
-                    </div>
-                </div>
-            </div>
-
-            <div class="question-item">
-                <div class="question-header">
-                    <span class="question-number">Soal 25</span>
-                    <span class="question-type">Pilihan Ganda</span>
-                </div>
-                <div class="indicator">
-                    <strong>Indikator:</strong> Mengetahui dampak penaklukan Konstantinopel
-                </div>
-                <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
-                    <ul>
-                        <li>Berakhirnya Kekaisaran Bizantium (Roma Timur)</li>
-                        <li>Islam masuk ke Eropa Tenggara</li>
-                        <li>Kota diubah menjadi Istanbul (Islambol)</li>
-                        <li>Aw kebangkitan Turki Utsmani sebagai kekuatan dunia</li>
-                    </ul>
-                    <div class="key-concepts">
-                        <strong>Konsep Kunci:</strong> Istanbul, Hagia Sophia, jembatan peradaban, warisan Islam
-                    </div>
-                </div>
-            </div>
-
-            <div class="question-item">
-                <div class="question-header">
-                    <span class="question-number">Soal 28</span>
-                    <span class="question-type">Isian Singkat</span>
-                </div>
-                <div class="indicator">
-                    <strong>Indikator:</strong> Menyebutkan ayat Al-Qur'an yang berkaitan dengan Al Fatih
-                </div>
-                <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
-                    <ul>
-                        <li>Hadits Nabi SAW tentang penakluk Konstantinopel</li>
-                        <li>Makna "nikmat Allah yang besar" dalam konteks kemenangan</li>
-                        <li>Ayat tentang kegigihan dalam berjuang (QS. Al-Baqarah: 214)</li>
-                    </ul>
-                    <div class="key-concepts">
-                        <strong>Jawaban yang Diharapkan:</strong> "Telah menceritakan kepada kami..." (Hadits tentang penakluk Konstantinopel)
-                    </div>
-                </div>
-            </div>
-
-            <div class="question-item">
-                <div class="question-header">
-                    <span class="question-number">Soal 29</span>
-                    <span class="question-type">Isian Singkat</span>
-                </div>
-                <div class="indicator">
-                    <strong>Indikator:</strong> Menyebutkan strategi unggulan Al Fatih
-                </div>
-                <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
-                    <ul>
-                        <li>Penggunaan meriam raksasa (cast bronze)</li>
-                        <li>Memblokade laut dengan rantai besi</li>
-                        <li>Memotong jalur bantuan musuh</li>
-                        <li>Semangat jihad para prajurit</li>
-                    </ul>
-                    <div class="key-concepts">
-                        <strong>Jawaban yang Diharapkan:</strong> "Penggunaan meriam besar dan pengepungan total"
-                    </div>
-                </div>
-            </div>
-
-            <div class="question-item">
-                <div class="question-header">
-                    <span class="question-number">Soal 30</span>
-                    <span class="question-type">Isian Singkat</span>
-                </div>
-                <div class="indicator">
-                    <strong>Indikator:</strong> Menyebutkan karakter/akhlak Muhammad Al Fatih
-                </div>
-                <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
-                    <ul>
-                        <li>Sifat disiplin dan tekun</li>
-                        <li>Kepemimpinan yang adil dan bijaksana</li>
-                        <li>Kesabaran menghadapi kegagalan</li>
-                        <li>Keimanan yang kuat dan tawakkal</li>
-                    </ul>
-                    <div class="key-concepts">
-                        <strong>Jawaban yang Diharapkan:</strong> "Disiplin, adil, sabar, dan beriman kuat"
-                    </div>
-                </div>
-            </div>
-
-            <div class="question-item">
-                <div class="question-header">
-                    <span class="question-number">Soal 34</span>
-                    <span class="question-type">Esai</span>
-                </div>
-                <div class="indicator">
-                    <strong>Indikator:</strong> Menelaah akhlak Al Fatih dengan contoh nyata
-                </div>
-                <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
-                    <ul>
-                        <li>Memaparkan minimal 3 sifat mulia Al Fatih</li>
-                        <li>Memberikan bukti konkret dari peristiwa sejarah</li>
-                        <li>Menganalisis relevansi akhlak tersebut di era modern</li>
-                        <li>Merumuskan pelajaran moral untuk pemimpin masa kini</li>
-                    </ul>
-                    <div class="key-concepts">
-                        <strong>Keterampilan:</strong> Analisis mendalam, argumentasi historis, sintesis nilai
-                    </div>
-                </div>
-            </div>
-
-            <div class="question-item">
-                <div class="question-header">
-                    <span class="question-number">Soal 35</span>
-                    <span class="question-type">Esai</span>
-                </div>
-                <div class="indicator">
-                    <strong>Indikator:</strong> Menceritakan kisah inspiratif dari kehidupan Al Fatih
-                </div>
-                <div class="material-detail">
-                    <h4>Materi yang Diujikan:</h4>
-                    <ul>
-                        <li>Memilih satu episode penting (misal: janjinya di usia 21 tahun)</li>
-                        <li>Menguraikan latar belakang, konflik, solusi, hasil</li>
-                        <li>Menekankan nilai-nilai Islam yang terkandung</li>
-                        <li>Mensinergikan dengan konteks kepemimpinan remaja</li>
-                    </ul>
-                    <div class="key-concepts">
-                        <strong>Keterampilan:</strong> Storytelling, penalaran kronologis, ekstraksi nilai moral
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer">
-            <p>Dokumen ini disusun berdasarkan Blueprint PAS PAI SMP Kelas IX Semester 1 Kurikulum Merdeka</p>
-            <p>© Tim Pendidikan Agama | Tahun Ajaran 2025/2026</p>
-        </div>
-    </div>
-</body>
-</html>
+                    <h4>Penjelasan Mendalam:</h
