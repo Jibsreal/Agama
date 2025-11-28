@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Buku Ringkas PAI Kelas IX — Slides</title>
+  <style>
+    :root{
+      --bg:#f7f9fc;
+      --card:#ffffff;
+      --accent:#0b5cff;
+      --muted:#6b7280;
+      --glass: rgba(11,92,255,0.06);
+      --maxw:1000px;
+      --pad:24px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body{height:100%;margin:0;background:var(--bg);color:#111;}
+    .app{
+      display:flex;
+      gap:16px;
+      max-width:1200px;
+      margin:28px auto;
+      padding:16px;
+    }
+    /* Sidebar / toc */
+    .toc{
+      width:260px;
+      background:linear-gradient(180deg,var(--card),#fbfdff);
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(12,40,80,0.06);
+      padding:16px;
+      position:sticky;
+      top:24px;
+      height: calc(100vh - 48px);
+      overflow:auto;
+    }
+    .toc h2{margin:0 0 8px 0;font-size:18px;}
+    .toc p{margin:0 0 12px 0;color:var(--muted);font-size:13px;}
+    .toc ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;}
+    .toc li button{
+      text-align:left;border:0;background:transparent;padding:8px;border-radius:8px;cursor:pointer;font-size:14px;color:#0b1236;
+    }
+    .toc li button:hover{background:var(--glass);}
+    .toc .meta{font-size:12px;color:var(--muted);margin-top:12px;}
+
+    /* Slide area */
+    .stage{
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .slide{
+      background:var(--card);
+      border-radius:12px;
+      padding:28px;
+      min-height:520px;
+      box-shadow:0 18px 40px rgba(12,40,80,0.06);
+      position:relative;
+    }
+    .slide h1{font-size:20px;margin:0 0 8px 0;color:var(--accent);}
+    .slide h3{margin:0 0 6px 0;color:#123;}
+    .muted{color:var(--muted);font-size:13px;}
+    .verse{
+      background:#fbfdff;padding:12px;border-left:4px solid var(--accent);border-radius:6px;margin:12px 0;font-size:15px;
+    }
+    .verse .arab{font-family: "Scheherazade New", "Amiri", serif;font-size:20px;direction:rtl;text-align:right;}
+    .controls{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .nav{
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+    button.btn{
+      border:0;padding:10px 12px;border-radius:10px;background:var(--accent);color:white;cursor:pointer;font-weight:600;
+      box-shadow:0 6px 14px rgba(11,92,255,0.12);
+    }
+    button.ghost{
+      background:transparent;color:var(--accent);border:1px solid var(--glass);box-shadow:none;
+    }
+    .progress{font-size:13px;color:var(--muted)}
+    /* small notes */
+    .note{background:#fff7e6;padding:10px;border-radius:8px;border-left:4px solid #ffb020;color:#6b4b00;margin-top:8px}
+    /* content */
+    .content p{line-height:1.6;margin:8px 0;color:#1b2430}
+    .two-col{display:flex;gap:18px}
+    .col{flex:1}
+    .footer{
+      display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:13px;color:var(--muted)
+    }
+
+    /* responsive */
+    @media (max-width:900px){
+      .app{flex-direction:column;padding:12px}
+      .toc{width:100%;height:auto;position:relative;order:2}
+    }
+
+    /* print-friendly */
+    @media print{
+      body{background:white}
+      .toc, .controls, button{display:none !important}
+      .slide{box-shadow:none;border-radius:0;padding:12px;min-height:unset}
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="toc" aria-label="Daftar Isi">
+      <h2>Buku Ringkas PAI — Kelas IX</h2>
+      <p class="muted">Kurikulum Merdeka — Materi ringkas, ayat & arti</p>
+      <ul id="tocList"></ul>
+      <div class="meta">
+        <div><strong>Isi:</strong> Kurban & Akikah • Zakat • Penaklukan Konstantinopel</div>
+        <div style="margin-top:8px;font-size:12px;color:var(--muted)">Gunakan ← → atau tombol di bawah untuk navigasi.</div>
+      </div>
+    </aside>
+
+    <main class="stage">
+      <div class="slide" id="slideRoot" role="region" aria-live="polite">
+        <!-- slide content injected via JS -->
+      </div>
+
+      <div class="controls">
+        <div class="nav">
+          <button class="btn" id="prevBtn" title="Sebelumnya">← Sebelumnya</button>
+          <button class="btn" id="nextBtn" title="Berikutnya">Berikutnya →</button>
+          <button class="ghost" id="printBtn" title="Cetak / Simpan PDF">Cetak / Simpan PDF</button>
+        </div>
+        <div class="progress" id="progress">Slide <span id="idx">1</span> / <span id="total">1</span></div>
+      </div>
+
+      <div class="footer">
+        <div class="muted">Buku Ringkas — PAI Kelas IX • 2025/2026</div>
+        <div class="muted">Sumber: Al-Qur'an, Hadis, Buku PAI Kemenag, Sejarah Utsmani</div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Slide data (ringkasan dari buku ringkas; setiap objek = 1 slide/page)
+    const slides = [
+      {
+        id: 'cover',
+        title: 'BUKU RINGKAS SISWA — PAI KELAS IX',
+        subtitle: 'Kurikulum Merdeka | Tahun Ajaran 2025/2026',
+        body: `<p class="muted">Ringkasan materi: Kurban & Akikah, Zakat, Peradaban Turki Utsmani — Penaklukan Konstantinopel.</p>
+               <p>Gunakan menu sebelah untuk melompat ke materi. Slide ini adalah pengantar dan panduan ringkas.</p>`
+      },
+
+      /* BAB 1 Kurban & Akikah - slides 2.. */
+      {
+        id:'k1',
+        title:'BAB 1 — Kurban & Akikah',
+        subtitle:'Makna Kurban',
+        body:`<div class="content"><p><strong>Makna:</strong> Kurban adalah ibadah penyembelihan hewan sebagai bentuk kedekatan dan ketaatan kepada Allah. Ibadah ini melatih keikhlasan, empati, dan semangat berbagi.</p>
+              <p class="muted">Pembelajaran: diskusikan mengapa simbol pengorbanan membangun solidaritas sosial.</p></div>`
+      },
+      {
+        id:'k2',
+        title:'Dalil Kurban — Al-Hajj',
+        subtitle:'Surah Al-Hajj (potongan ayat)',
+        body:`<div class="verse">
+                <div class="arab" lang="ar">وَلِكُلِّ أُمَّةٍ جَعَلْنَا مَـنَسَكًا لِّيَذْكُرُوا اسْمَ اللَّهِ عَلَى مَا رَزَقَهُمْ</div>
+                <div class="muted">Al-Hajj : ayat 34 (terjemahan sebagian)</div>
+                <p><em>Arti singkat:</em> "Dan bagi setiap umat telah Kami syariatkan penyembelihan (kurban), supaya mereka menyebut nama Allah..."</p>
+                <p class="muted">Makna ayat: kurban sebagai ibadah berkelanjutan yang menghubungkan manusia dengan Tuhan melalui rasa syukur.</p>
+              </div>
+              <div class="verse" style="margin-top:12px">
+                <p><strong>Al-Hajj ayat 37 (terjemahan):</strong></p>
+                <p>"Daging dan darah hewan kurban itu tidak sampai kepada Allah, tetapi ketakwaanmulah yang sampai kepada-Nya."</p>
+                <p class="muted">Inti: nilai ibadah terletak pada ketakwaan, bukan sekedar sisi fisik.</p>
+              </div>`
+      },
+      {
+        id:'k3',
+        title:'Hukum & Waktu Kurban',
+        subtitle:'Hukum dan pelaksanaan',
+        body:`<div class="content">
+                <p><strong>Hukum:</strong> Mayoritas ulama menempatkan kurban sebagai <em>sunnah muakkad</em> (sunnah yang sangat dianjurkan). Ada perbedaan minor dalam ijtihad ulama, diskusikan konteks kemampuan sosial ekonomi.</p>
+                <p><strong>Waktu penyembelihan:</strong> Setelah Salat Idul Adha sampai tanggal 13 Dzulhijjah.</p>
+               </div>`
+      },
+      {
+        id:'k4',
+        title:'Persamaan & Perbedaan: Kurban vs Akikah',
+        subtitle:'Kapan & mengapa',
+        body:`<div class="content">
+                <p>Keduanya melibatkan penyembelihan hewan namun konteks berbeda:</p>
+                <ul>
+                  <li><strong>Kurban:</strong> Dilakukan pada Idul Adha, bersifat syiar keagamaan dan kepedulian sosial.</li>
+                  <li><strong>Akikah:</strong> Dilakukan pada hari ke-7 kelahiran anak sebagai rasa syukur dan doa keselamatan.</li>
+                </ul>
+                <p class="muted">Pelajari hadis terkait akikah: "Setiap anak tergadai oleh akikahnya..." (HR. Abu Dawud).</p>
+               </div>`
+      },
+      {
+        id:'k5',
+        title:'Praktik Penyembelihan & Pembagian',
+        subtitle:'Adab dan distribusi',
+        body:`<div class="content">
+                <p><strong>Adab:</strong> Hewan diarahkan ke kiblat; penyembelih membaca basmalah dan takbir; menyembelih dengan cara yang membuat hewan menderita seminimal mungkin.</p>
+                <p><strong>Pembagian daging:</strong> Umumnya dibagi untuk: keluarga, kerabat, dan masyarakat yang membutuhkan.</p>
+               </div>`
+      },
+
+      /* BAB 2 Zakat */
+      {
+        id:'z1',
+        title:'BAB 2 — Zakat',
+        subtitle:'Makna & jenis',
+        body:`<div class="content">
+                <p><strong>Makna:</strong> Zakat berarti "membersihkan" — harta dan jiwa. Ia berfungsi sebagai mekanisme kesejahteraan dan redistribusi sosial.</p>
+                <p><strong>Jenis:</strong> Zakat mal, zakat fitrah, zakat profesi (kontemporer), dan jenis lain melalui ijtihad.</p>
+               </div>`
+      },
+      {
+        id:'z2',
+        title:'Dalil Zakat',
+        subtitle:'At-Taubah ayat 103 & 60',
+        body:`<div class="verse">
+                <p><strong>At-Taubah ayat 103 (terjemahan):</strong></p>
+                <p>"Ambillah zakat dari harta mereka untuk membersihkan dan menyucikan mereka."</p>
+                <p class="muted">Inti: zakat punya fungsi moral dan sosial.</p>
+               </div>
+               <div class="verse" style="margin-top:10px">
+                <p><strong>At-Taubah ayat 60 (terjemahan):</strong></p>
+                <p>"Sungguh zakat itu hanya untuk orang fakir, miskin, amil, muallaf, memerdekakan budak, orang berutang, di jalan Allah, dan ibnu sabil."</p>
+                <p class="muted">Inti: pembagian zakat ditentukan secara jelas untuk efektivitas sosial.</p>
+               </div>`
+      },
+      {
+        id:'z3',
+        title:'Zakat Fitrah & Zakat Mal',
+        subtitle:'Perbedaan dan praktik',
+        body:`<div class="content">
+                <p><strong>Zakat Fitrah:</strong> Dikeluarkan pada akhir Ramadan sebelum Salat Id; biasanya berupa bahan pokok (mis. beras ~2.5 kg) atau senilai uang.</p>
+                <p><strong>Zakat Mal:</strong> Mencakup emas, perak, perdagangan, pertanian, peternakan, dan penghasilan tertentu. Perhitungannya melibatkan nishab dan haul.</p>
+               </div>`
+      },
+      {
+        id:'z4',
+        title:'Istilah Penting Zakat',
+        subtitle:'Nishab • Haul • Mustahik',
+        body:`<div class="content">
+                <ul>
+                  <li><strong>Nishab:</strong> Batas minimal harta yang harus dizakati.</li>
+                  <li><strong>Haul:</strong> Masa kepemilikan selama 1 tahun penuh.</li>
+                  <li><strong>Mustahik:</strong> Penerima zakat (kategori di ayat At-Taubah 60).</li>
+                </ul>
+                <p class="muted">Studi kasus: Diskusikan bagaimana zakat dapat dimodelkan untuk mengatasi kemiskinan lokal.</p>
+               </div>`
+      },
+
+      /* BAB 3 Peradaban Utsmani */
+      {
+        id:'u1',
+        title:'BAB 3 — Peradaban Turki Utsmani',
+        subtitle:'Penaklukan Konstantinopel (1453)',
+        body:`<div class="content">
+                <p>Penaklukan Konstantinopel (29 Mei 1453) oleh Muhammad Al-Fatih merupakan peristiwa yang mengubah jalur perdagangan, tatanan politik, dan sejarah Eropa-Asia.</p>
+                <p class="muted">Pelajari dari sisi strategi, teknologi, dan kepemimpinan.</p>
+               </div>`
+      },
+      {
+        id:'u2',
+        title:'Biografi Singkat Muhammad Al-Fatih',
+        subtitle:'Sifat dan pendidikan',
+        body:`<div class="content">
+                <p><strong>Nama:</strong> Muhammad II (Al-Fatih). Lahir 1432, menaklukkan Konstantinopel pada usia 21.</p>
+                <p><strong>Sifat:</strong> disiplin, cerdas, adil, rendah hati. <strong>Guru utama:</strong> Syekh Aq Syamsuddin.</p>
+               </div>`
+      },
+      {
+        id:'u3',
+        title:'Ayat & Hadis yang relevan',
+        subtitle:'Motivasi spiritual dan moral',
+        body:`<div class="verse">
+                <p><strong>Al-Baqarah 249 (terjemahan):</strong></p>
+                <p>"Berapa banyak kelompok kecil yang mengalahkan kelompok besar dengan izin Allah."</p>
+                <p class="muted">Makna: kemenangan bukan semata jumlah, tapi izin dan strategi.</p>
+               </div>
+               <div class="note">Hadis: "Konstantinopel pasti akan ditaklukkan..." (HR. Ahmad) — digunakan dalam tradisi sejarah sebagai motivasi moral.</div>`
+      },
+      {
+        id:'u4',
+        title:'Strategi Penaklukan',
+        subtitle:'Teknologi & taktik',
+        body:`<div class="content">
+                <ul>
+                  <li>Penggunaan meriam besar (Urban) yang mampu merusak tembok kota.</li>
+                  <li>Inovasi taktis: memindahkan kapal melewati jalur darat untuk mengejutkan pihak musuh.</li>
+                  <li>Disiplin pasukan (Janissary) dan perencanaan pengepungan selama 53 hari.</li>
+                </ul>
+               </div>`
+      },
+      {
+        id:'u5',
+        title:'Akhlak Al-Fatih & Kebijakan Pasca-Menang',
+        subtitle:'Toleransi dan administrasi',
+        body:`<div class="content">
+                <p>Setelah penaklukan, Al-Fatih menerapkan kebijakan yang relatif toleran: menjamin kebebasan beragama bagi penduduk dan memanfaatkan tenaga administratif lokal.</p>
+                <p class="muted">Pelajaran: kepemimpinan efektif melibatkan kehati-hatian, integrasi, dan pembinaan stabilitas pascaperang.</p>
+               </div>`
+      },
+
+      /* BAB 4 Studi Kasus */
+      {
+        id:'s1',
+        title:'BAB 4 — Studi Kasus & Refleksi',
+        subtitle:'Zakat dan Penyebaran Islam',
+        body:`<div class="content">
+                <p><strong>Peran Zakat:</strong> pembiayaan pendidikan, kesehatan, pemberdayaan ekonomi, pengentasan kemiskinan.</p>
+                <p><strong>Penyebaran Islam ke Nusantara:</strong> melalui perdagangan, dakwah Wali Songo, dan jalur kebudayaan — bukti antara lain nisan kuno dan catatan asing.</p>
+               </div>`
+      },
+      {
+        id:'end',
+        title:'Penutup & Aktivitas Belajar',
+        subtitle:'Tugas & saran pembelajaran',
+        body:`<div class="content">
+                <ol>
+                  <li>Buat ringkasan: bandingkan kurban & akikah dalam 200 kata.</li>
+                  <li>Studi kasus: susun rencana distribusi daging kurban untuk satu desa (pertimbangkan keadilan dan logistik).</li>
+                  <li>Diskusi: Bagaimana zakat dapat ditransformasikan secara modern (mis. zakat digital) untuk pemberdayaan ekonomi?</li>
+                </ol>
+                <p class="muted">Sumber tambahan: Al-Qur'an, Hadis Shahih, Buku PAI Kemenag, Ensiklopedia sejarah Utsmani.</p>
+               </div>`
+      }
+    ];
+
+    // build TOC
+    const tocList = document.getElementById('tocList');
+    slides.forEach((s, i) => {
+      const li = document.createElement('li');
+      const btn = document.createElement('button');
+      btn.textContent = (s.title.length>40? s.title.slice(0,38)+'...' : s.title);
+      btn.addEventListener('click', ()=> showSlide(i));
+      li.appendChild(btn);
+      tocList.appendChild(li);
+    });
+
+    // stage
+    const slideRoot = document.getElementById('slideRoot');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const printBtn = document.getElementById('printBtn');
+    const idxEl = document.getElementById('idx');
+    const totalEl = document.getElementById('total');
+
+    let index = 0;
+    totalEl.textContent = slides.length;
+
+    function render(s){
+      slideRoot.innerHTML = `
+        <h1>${escapeHtml(s.title)}</h1>
+        <h3 class="muted">${escapeHtml(s.subtitle || '')}</h3>
+        <div class="content">${s.body}</div>
+      `;
+      idxEl.textContent = index+1;
+      // accessibility: focus
+      slideRoot.focus();
+    }
+
+    function showSlide(i){
+      if(i < 0) i = 0;
+      if(i > slides.length-1) i = slides.length-1;
+      index = i;
+      render(slides[i]);
+      // smooth scroll to top
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+
+    prevBtn.addEventListener('click', ()=> showSlide(index-1));
+    nextBtn.addEventListener('click', ()=> showSlide(index+1));
+    printBtn.addEventListener('click', ()=> window.print());
+
+    // keyboard nav
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'ArrowLeft') showSlide(index-1);
+      if(e.key === 'ArrowRight') showSlide(index+1);
+    });
+
+    // escape html in title/subtitle
+    function escapeHtml(text){
+      if(!text) return '';
+      return text.replace(/[&<>"']/g, (m)=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m]));
+    }
+
+    // init
+    showSlide(0);
+  </script>
+</body>
+</html>
