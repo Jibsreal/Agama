@@ -1,399 +1,527 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Buku Ringkas PAI Kelas IX — Slides</title>
-  <style>
-    :root{
-      --bg:#f7f9fc;
-      --card:#ffffff;
-      --accent:#0b5cff;
-      --muted:#6b7280;
-      --glass: rgba(11,92,255,0.06);
-      --maxw:1000px;
-      --pad:24px;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-    html,body{height:100%;margin:0;background:var(--bg);color:#111;}
-    .app{
-      display:flex;
-      gap:16px;
-      max-width:1200px;
-      margin:28px auto;
-      padding:16px;
-    }
-    /* Sidebar / toc */
-    .toc{
-      width:260px;
-      background:linear-gradient(180deg,var(--card),#fbfdff);
-      border-radius:12px;
-      box-shadow:0 6px 18px rgba(12,40,80,0.06);
-      padding:16px;
-      position:sticky;
-      top:24px;
-      height: calc(100vh - 48px);
-      overflow:auto;
-    }
-    .toc h2{margin:0 0 8px 0;font-size:18px;}
-    .toc p{margin:0 0 12px 0;color:var(--muted);font-size:13px;}
-    .toc ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;}
-    .toc li button{
-      text-align:left;border:0;background:transparent;padding:8px;border-radius:8px;cursor:pointer;font-size:14px;color:#0b1236;
-    }
-    .toc li button:hover{background:var(--glass);}
-    .toc .meta{font-size:12px;color:var(--muted);margin-top:12px;}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blueprint PAS Pendidikan Agama SMP Kelas 9 Semester 1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Slide area */
-    .stage{
-      flex:1;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-    }
-    .slide{
-      background:var(--card);
-      border-radius:12px;
-      padding:28px;
-      min-height:520px;
-      box-shadow:0 18px 40px rgba(12,40,80,0.06);
-      position:relative;
-    }
-    .slide h1{font-size:20px;margin:0 0 8px 0;color:var(--accent);}
-    .slide h3{margin:0 0 6px 0;color:#123;}
-    .muted{color:var(--muted);font-size:13px;}
-    .verse{
-      background:#fbfdff;padding:12px;border-left:4px solid var(--accent);border-radius:6px;margin:12px 0;font-size:15px;
-    }
-    .verse .arab{font-family: "Scheherazade New", "Amiri", serif;font-size:20px;direction:rtl;text-align:right;}
-    .controls{
-      display:flex;
-      gap:8px;
-      align-items:center;
-      justify-content:space-between;
-    }
-    .nav{
-      display:flex;
-      gap:8px;
-      align-items:center;
-    }
-    button.btn{
-      border:0;padding:10px 12px;border-radius:10px;background:var(--accent);color:white;cursor:pointer;font-weight:600;
-      box-shadow:0 6px 14px rgba(11,92,255,0.12);
-    }
-    button.ghost{
-      background:transparent;color:var(--accent);border:1px solid var(--glass);box-shadow:none;
-    }
-    .progress{font-size:13px;color:var(--muted)}
-    /* small notes */
-    .note{background:#fff7e6;padding:10px;border-radius:8px;border-left:4px solid #ffb020;color:#6b4b00;margin-top:8px}
-    /* content */
-    .content p{line-height:1.6;margin:8px 0;color:#1b2430}
-    .two-col{display:flex;gap:18px}
-    .col{flex:1}
-    .footer{
-      display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:13px;color:var(--muted)
-    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
 
-    /* responsive */
-    @media (max-width:900px){
-      .app{flex-direction:column;padding:12px}
-      .toc{width:100%;height:auto;position:relative;order:2}
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
 
-    /* print-friendly */
-    @media print{
-      body{background:white}
-      .toc, .controls, button{display:none !important}
-      .slide{box-shadow:none;border-radius:0;padding:12px;min-height:unset}
-    }
-  </style>
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+
+        .summary-section {
+            padding: 25px 30px;
+            background: #f8f9fa;
+        }
+
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .summary-table th {
+            background: #34495e;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .summary-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .summary-table tr:nth-child(even) {
+            background: #f2f4f7;
+        }
+
+        .content-section {
+            padding: 30px;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 18px 25px;
+            margin: 25px 0 15px;
+            border-radius: 10px;
+            font-size: 1.3em;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+        }
+
+        .question-item {
+            background: white;
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+        }
+
+        .question-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+        }
+
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .question-number {
+            background: #e74c3c;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .question-type {
+            background: #f39c12;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+
+        .indicator {
+            background: #ecf0f1;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 4px solid #9b59b6;
+            margin: 10px 0;
+            font-style: italic;
+        }
+
+        .material-detail {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 12px;
+        }
+
+        .material-detail h4 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .material-detail ul {
+            margin-left: 20px;
+        }
+
+        .material-detail li {
+            margin-bottom: 5px;
+            color: #34495e;
+        }
+
+        .key-concepts {
+            background: #e8f6f3;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            border-left: 3px solid #1abc9c;
+        }
+
+        .key-concepts strong {
+            color: #16a085;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #2c3e50;
+            color: white;
+            font-size: 0.85em;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            header h1 {
+                font-size: 1.4em;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+            
+            .question-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="app">
-    <aside class="toc" aria-label="Daftar Isi">
-      <h2>Buku Ringkas PAI — Kelas IX</h2>
-      <p class="muted">Kurikulum Merdeka — Materi ringkas, ayat & arti</p>
-      <ul id="tocList"></ul>
-      <div class="meta">
-        <div><strong>Isi:</strong> Kurban & Akikah • Zakat • Penaklukan Konstantinopel</div>
-        <div style="margin-top:8px;font-size:12px;color:var(--muted)">Gunakan ← → atau tombol di bawah untuk navigasi.</div>
-      </div>
-    </aside>
+    <div class="container">
+        <header>
+            <h1>KISI-KISI PENILAIAN AKHIR SEMESTER (PAS)</h1>
+            <p>Pendidikan Agama dan Budi Pekerti | SMP Kelas IX Semester 1 | Kurikulum Merdeka</p>
+        </header>
 
-    <main class="stage">
-      <div class="slide" id="slideRoot" role="region" aria-live="polite">
-        <!-- slide content injected via JS -->
-      </div>
-
-      <div class="controls">
-        <div class="nav">
-          <button class="btn" id="prevBtn" title="Sebelumnya">← Sebelumnya</button>
-          <button class="btn" id="nextBtn" title="Berikutnya">Berikutnya →</button>
-          <button class="ghost" id="printBtn" title="Cetak / Simpan PDF">Cetak / Simpan PDF</button>
+        <div class="summary-section">
+            <h2 style="color: #2c3e50; margin-bottom: 20px;">Spesifikasi Umum</h2>
+            <table class="summary-table">
+                <tr>
+                    <th width="30%">Kategori</th>
+                    <th width="70%">Detail</th>
+                </tr>
+                <tr>
+                    <td><strong>Tahun Ajaran</strong></td>
+                    <td>2025/2026</td>
+                </tr>
+                <tr>
+                    <td><strong>Mata Pelajaran</strong></td>
+                    <td>Pendidikan Agama dan Budi Pekerti (Islam)</td>
+                </tr>
+                <tr>
+                    <td><strong>Kurikulum</strong></td>
+                    <td>Kurikulum Merdeka</td>
+                </tr>
+                <tr>
+                    <td><strong>Alokasi Waktu</strong></td>
+                    <td>60 Menit</td>
+                </tr>
+                <tr>
+                    <td><strong>Jumlah Soal</strong></td>
+                    <td>35 Butir Soal</td>
+                </tr>
+                <tr>
+                    <td><strong>Komposisi Soal</strong></td>
+                    <td>25 Pilihan Ganda, 5 Isian Singkat, 5 Esai</td>
+                </tr>
+            </table>
         </div>
-        <div class="progress" id="progress">Slide <span id="idx">1</span> / <span id="total">1</span></div>
-      </div>
 
-      <div class="footer">
-        <div class="muted">Buku Ringkas — PAI Kelas IX • 2025/2026</div>
-        <div class="muted">Sumber: Al-Qur'an, Hadis, Buku PAI Kemenag, Sejarah Utsmani</div>
-      </div>
-    </main>
-  </div>
+        <div class="content-section">
+            <!-- Bagian 1: Kurban dan Akikah -->
+            <div class="section-header">
+                🐑 MATERI KURBAN DAN AKIKAH (Soal 1-9, 26-27)
+            </div>
 
-  <script>
-    // Slide data (ringkasan dari buku ringkas; setiap objek = 1 slide/page)
-    const slides = [
-      {
-        id: 'cover',
-        title: 'BUKU RINGKAS SISWA — PAI KELAS IX',
-        subtitle: 'Kurikulum Merdeka | Tahun Ajaran 2025/2026',
-        body: `<p class="muted">Ringkasan materi: Kurban & Akikah, Zakat, Peradaban Turki Utsmani — Penaklukan Konstantinopel.</p>
-               <p>Gunakan menu sebelah untuk melompat ke materi. Slide ini adalah pengantar dan panduan ringkas.</p>`
-      },
+            <div class="question-item">
+                <div class="question-header">
+                    <span class="question-number">Soal 1</span>
+                    <span class="question-type">Pilihan Ganda</span>
+                </div>
+                <div class="indicator">
+                    <strong>Indikator:</strong> Memahami ketentuan dasar kurban dalam Islam
+                </div>
+                <div class="material-detail">
+                    <h4>Materi yang Diujikan:</h4>
+                    <ul>
+                        <li>Pengertian kurban sebagai ibadah qurban</li>
+                        <li>Dalil-dalil hukum kurban (Qur'an dan Hadits)</li>
+                        <li>Hikmah dan tujuan dilaksanakannya kurban</li>
+                        <li>Persyaratan hewan kurban (sehat, cacat, umur minimal)</li>
+                    </ul>
+                    <div class="key-concepts">
+                        <strong>Konsep Kunci:</strong> Qurban, sunnah muakkad, hewan kurban yang sah, niat berqurban
+                    </div>
+                </div>
+            </div>
 
-      /* BAB 1 Kurban & Akikah - slides 2.. */
-      {
-        id:'k1',
-        title:'BAB 1 — Kurban & Akikah',
-        subtitle:'Makna Kurban',
-        body:`<div class="content"><p><strong>Makna:</strong> Kurban adalah ibadah penyembelihan hewan sebagai bentuk kedekatan dan ketaatan kepada Allah. Ibadah ini melatih keikhlasan, empati, dan semangat berbagi.</p>
-              <p class="muted">Pembelajaran: diskusikan mengapa simbol pengorbanan membangun solidaritas sosial.</p></div>`
-      },
-      {
-        id:'k2',
-        title:'Dalil Kurban — Al-Hajj',
-        subtitle:'Surah Al-Hajj (potongan ayat)',
-        body:`<div class="verse">
-                <div class="arab" lang="ar">وَلِكُلِّ أُمَّةٍ جَعَلْنَا مَـنَسَكًا لِّيَذْكُرُوا اسْمَ اللَّهِ عَلَى مَا رَزَقَهُمْ</div>
-                <div class="muted">Al-Hajj : ayat 34 (terjemahan sebagian)</div>
-                <p><em>Arti singkat:</em> "Dan bagi setiap umat telah Kami syariatkan penyembelihan (kurban), supaya mereka menyebut nama Allah..."</p>
-                <p class="muted">Makna ayat: kurban sebagai ibadah berkelanjutan yang menghubungkan manusia dengan Tuhan melalui rasa syukur.</p>
-              </div>
-              <div class="verse" style="margin-top:12px">
-                <p><strong>Al-Hajj ayat 37 (terjemahan):</strong></p>
-                <p>"Daging dan darah hewan kurban itu tidak sampai kepada Allah, tetapi ketakwaanmulah yang sampai kepada-Nya."</p>
-                <p class="muted">Inti: nilai ibadah terletak pada ketakwaan, bukan sekedar sisi fisik.</p>
-              </div>`
-      },
-      {
-        id:'k3',
-        title:'Hukum & Waktu Kurban',
-        subtitle:'Hukum dan pelaksanaan',
-        body:`<div class="content">
-                <p><strong>Hukum:</strong> Mayoritas ulama menempatkan kurban sebagai <em>sunnah muakkad</em> (sunnah yang sangat dianjurkan). Ada perbedaan minor dalam ijtihad ulama, diskusikan konteks kemampuan sosial ekonomi.</p>
-                <p><strong>Waktu penyembelihan:</strong> Setelah Salat Idul Adha sampai tanggal 13 Dzulhijjah.</p>
-               </div>`
-      },
-      {
-        id:'k4',
-        title:'Persamaan & Perbedaan: Kurban vs Akikah',
-        subtitle:'Kapan & mengapa',
-        body:`<div class="content">
-                <p>Keduanya melibatkan penyembelihan hewan namun konteks berbeda:</p>
-                <ul>
-                  <li><strong>Kurban:</strong> Dilakukan pada Idul Adha, bersifat syiar keagamaan dan kepedulian sosial.</li>
-                  <li><strong>Akikah:</strong> Dilakukan pada hari ke-7 kelahiran anak sebagai rasa syukur dan doa keselamatan.</li>
-                </ul>
-                <p class="muted">Pelajari hadis terkait akikah: "Setiap anak tergadai oleh akikahnya..." (HR. Abu Dawud).</p>
-               </div>`
-      },
-      {
-        id:'k5',
-        title:'Praktik Penyembelihan & Pembagian',
-        subtitle:'Adab dan distribusi',
-        body:`<div class="content">
-                <p><strong>Adab:</strong> Hewan diarahkan ke kiblat; penyembelih membaca basmalah dan takbir; menyembelih dengan cara yang membuat hewan menderita seminimal mungkin.</p>
-                <p><strong>Pembagian daging:</strong> Umumnya dibagi untuk: keluarga, kerabat, dan masyarakat yang membutuhkan.</p>
-               </div>`
-      },
+            <div class="question-item">
+                <div class="question-header">
+                    <span class="question-number">Soal 2</span>
+                    <span class="question-type">Pilihan Ganda</span>
+                </div>
+                <div class="indicator">
+                    <strong>Indikator:</strong> Memahami ketentuan teknis penyembelihan hewan kurban
+                </div>
+                <div class="material-detail">
+                    <h4>Materi yang Diujikan:</h4>
+                    <ul>
+                        <li>Waktu yang diperbolehkan untuk penyembelihan (10-12 Dzulhijjah)</li>
+                        <li>Waktu terbaik penyembelihan (hari Iduladha)</li>
+                        <li>Tata cara penyembelihan sesuai syariat</li>
+                        <li>Doa saat penyembelihan kurban</li>
+                    </ul>
+                    <div class="key-concepts">
+                        <strong>Konsep Kunci:</strong> Tasyriq, takbir, tajdid niyyah, pemotongan tenggorokan
+                    </div>
+                </div>
+            </div>
 
-      /* BAB 2 Zakat */
-      {
-        id:'z1',
-        title:'BAB 2 — Zakat',
-        subtitle:'Makna & jenis',
-        body:`<div class="content">
-                <p><strong>Makna:</strong> Zakat berarti "membersihkan" — harta dan jiwa. Ia berfungsi sebagai mekanisme kesejahteraan dan redistribusi sosial.</p>
-                <p><strong>Jenis:</strong> Zakat mal, zakat fitrah, zakat profesi (kontemporer), dan jenis lain melalui ijtihad.</p>
-               </div>`
-      },
-      {
-        id:'z2',
-        title:'Dalil Zakat',
-        subtitle:'At-Taubah ayat 103 & 60',
-        body:`<div class="verse">
-                <p><strong>At-Taubah ayat 103 (terjemahan):</strong></p>
-                <p>"Ambillah zakat dari harta mereka untuk membersihkan dan menyucikan mereka."</p>
-                <p class="muted">Inti: zakat punya fungsi moral dan sosial.</p>
-               </div>
-               <div class="verse" style="margin-top:10px">
-                <p><strong>At-Taubah ayat 60 (terjemahan):</strong></p>
-                <p>"Sungguh zakat itu hanya untuk orang fakir, miskin, amil, muallaf, memerdekakan budak, orang berutang, di jalan Allah, dan ibnu sabil."</p>
-                <p class="muted">Inti: pembagian zakat ditentukan secara jelas untuk efektivitas sosial.</p>
-               </div>`
-      },
-      {
-        id:'z3',
-        title:'Zakat Fitrah & Zakat Mal',
-        subtitle:'Perbedaan dan praktik',
-        body:`<div class="content">
-                <p><strong>Zakat Fitrah:</strong> Dikeluarkan pada akhir Ramadan sebelum Salat Id; biasanya berupa bahan pokok (mis. beras ~2.5 kg) atau senilai uang.</p>
-                <p><strong>Zakat Mal:</strong> Mencakup emas, perak, perdagangan, pertanian, peternakan, dan penghasilan tertentu. Perhitungannya melibatkan nishab dan haul.</p>
-               </div>`
-      },
-      {
-        id:'z4',
-        title:'Istilah Penting Zakat',
-        subtitle:'Nishab • Haul • Mustahik',
-        body:`<div class="content">
-                <ul>
-                  <li><strong>Nishab:</strong> Batas minimal harta yang harus dizakati.</li>
-                  <li><strong>Haul:</strong> Masa kepemilikan selama 1 tahun penuh.</li>
-                  <li><strong>Mustahik:</strong> Penerima zakat (kategori di ayat At-Taubah 60).</li>
-                </ul>
-                <p class="muted">Studi kasus: Diskusikan bagaimana zakat dapat dimodelkan untuk mengatasi kemiskinan lokal.</p>
-               </div>`
-      },
+            <div class="question-item">
+                <div class="question-header">
+                    <span class="question-number">Soal 3</span>
+                    <span class="question-type">Pilihan Ganda</span>
+                </div>
+                <div class="indicator">
+                    <strong>Indikator:</strong> Mengetahui waktu tepat penyembelihan kurban
+                </div>
+                <div class="material-detail">
+                    <h4>Materi yang Diujikan:</h4>
+                    <ul>
+                        <li>Hari-hari nahr (penyembelihan)</li>
+                        <li>Batas akhir waktu kurban</li>
+                        <li>Konsekuensi melewati waktu yang ditentukan</li>
+                        <li>Perbedaan waktu kurban dengan akikah</li>
+                    </ul>
+                    <div class="key-concepts">
+                        <strong>Konsep Kunci:</strong> Dzulhijjah, hari tasyrik, waktu terlarang, qadha kurban
+                    </div>
+                </div>
+            </div>
 
-      /* BAB 3 Peradaban Utsmani */
-      {
-        id:'u1',
-        title:'BAB 3 — Peradaban Turki Utsmani',
-        subtitle:'Penaklukan Konstantinopel (1453)',
-        body:`<div class="content">
-                <p>Penaklukan Konstantinopel (29 Mei 1453) oleh Muhammad Al-Fatih merupakan peristiwa yang mengubah jalur perdagangan, tatanan politik, dan sejarah Eropa-Asia.</p>
-                <p class="muted">Pelajari dari sisi strategi, teknologi, dan kepemimpinan.</p>
-               </div>`
-      },
-      {
-        id:'u2',
-        title:'Biografi Singkat Muhammad Al-Fatih',
-        subtitle:'Sifat dan pendidikan',
-        body:`<div class="content">
-                <p><strong>Nama:</strong> Muhammad II (Al-Fatih). Lahir 1432, menaklukkan Konstantinopel pada usia 21.</p>
-                <p><strong>Sifat:</strong> disiplin, cerdas, adil, rendah hati. <strong>Guru utama:</strong> Syekh Aq Syamsuddin.</p>
-               </div>`
-      },
-      {
-        id:'u3',
-        title:'Ayat & Hadis yang relevan',
-        subtitle:'Motivasi spiritual dan moral',
-        body:`<div class="verse">
-                <p><strong>Al-Baqarah 249 (terjemahan):</strong></p>
-                <p>"Berapa banyak kelompok kecil yang mengalahkan kelompok besar dengan izin Allah."</p>
-                <p class="muted">Makna: kemenangan bukan semata jumlah, tapi izin dan strategi.</p>
-               </div>
-               <div class="note">Hadis: "Konstantinopel pasti akan ditaklukkan..." (HR. Ahmad) — digunakan dalam tradisi sejarah sebagai motivasi moral.</div>`
-      },
-      {
-        id:'u4',
-        title:'Strategi Penaklukan',
-        subtitle:'Teknologi & taktik',
-        body:`<div class="content">
-                <ul>
-                  <li>Penggunaan meriam besar (Urban) yang mampu merusak tembok kota.</li>
-                  <li>Inovasi taktis: memindahkan kapal melewati jalur darat untuk mengejutkan pihak musuh.</li>
-                  <li>Disiplin pasukan (Janissary) dan perencanaan pengepungan selama 53 hari.</li>
-                </ul>
-               </div>`
-      },
-      {
-        id:'u5',
-        title:'Akhlak Al-Fatih & Kebijakan Pasca-Menang',
-        subtitle:'Toleransi dan administrasi',
-        body:`<div class="content">
-                <p>Setelah penaklukan, Al-Fatih menerapkan kebijakan yang relatif toleran: menjamin kebebasan beragama bagi penduduk dan memanfaatkan tenaga administratif lokal.</p>
-                <p class="muted">Pelajaran: kepemimpinan efektif melibatkan kehati-hatian, integrasi, dan pembinaan stabilitas pascaperang.</p>
-               </div>`
-      },
+            <div class="question-item">
+                <div class="question-header">
+                    <span class="question-number">Soal 4</span>
+                    <span class="question-type">Pilihan Ganda</span>
+                </div>
+                <div class="indicator">
+                    <strong>Indikator:</strong> Memahami persamaan dan perbedaan kurban dan akikah
+                </div>
+                <div class="material-detail">
+                    <h4>Materi yang Diujikan:</h4>
+                    <ul>
+                        <li>Persamaan: jenis hewan, syarat sah, cara penyembelihan</li>
+                        <li>Perbedaan: waktu, tujuan, status hukum, porsi pembagian</li>
+                        <li>Keutamaan masing-masing ibadah</li>
+                    </ul>
+                    <div class="key-concepts">
+                        <strong>Konsep Kunci:</strong> Sunnah muakkad vs sunnah ghairu muakkad, aqiqah 7 hari, qurban Iduladha
+                    </div>
+                </div>
+            </div>
 
-      /* BAB 4 Studi Kasus */
-      {
-        id:'s1',
-        title:'BAB 4 — Studi Kasus & Refleksi',
-        subtitle:'Zakat dan Penyebaran Islam',
-        body:`<div class="content">
-                <p><strong>Peran Zakat:</strong> pembiayaan pendidikan, kesehatan, pemberdayaan ekonomi, pengentasan kemiskinan.</p>
-                <p><strong>Penyebaran Islam ke Nusantara:</strong> melalui perdagangan, dakwah Wali Songo, dan jalur kebudayaan — bukti antara lain nisan kuno dan catatan asing.</p>
-               </div>`
-      },
-      {
-        id:'end',
-        title:'Penutup & Aktivitas Belajar',
-        subtitle:'Tugas & saran pembelajaran',
-        body:`<div class="content">
-                <ol>
-                  <li>Buat ringkasan: bandingkan kurban & akikah dalam 200 kata.</li>
-                  <li>Studi kasus: susun rencana distribusi daging kurban untuk satu desa (pertimbangkan keadilan dan logistik).</li>
-                  <li>Diskusi: Bagaimana zakat dapat ditransformasikan secara modern (mis. zakat digital) untuk pemberdayaan ekonomi?</li>
-                </ol>
-                <p class="muted">Sumber tambahan: Al-Qur'an, Hadis Shahih, Buku PAI Kemenag, Ensiklopedia sejarah Utsmani.</p>
-               </div>`
-      }
-    ];
+            <div class="question-item">
+                <div class="question-header">
+                    <span class="question-number">Soal 5</span>
+                    <span class="question-type">Pilihan Ganda</span>
+                </div>
+                <div class="indicator">
+                    <strong>Indikator:</strong> Mengetahui porsi pembagian daging kurban
+                </div>
+                <div class="material-detail">
+                    <h4>Materi yang Diujikan:</h4>
+                    <ul>
+                        <li>Pengelompokan porsi: fakir miskin, amil, muallaf, etc.</li>
+                        <li>Ketentuan pembagian 3 bagian: diri sendiri, keluarga, fakir miskin</li>
+                        <li>Boleh tidaknya dijual daging kurban</li>
+                        <li>Tata cara distribusi yang adil</li>
+                    </ul>
+                    <div class="key-concepts">
+                        <strong>Konsep Kunci:</strong> Mustahiq, tasadduq, tidak boleh dijual, distribusi 1/3
+                    </div>
+                </div>
+            </div>
 
-    // build TOC
-    const tocList = document.getElementById('tocList');
-    slides.forEach((s, i) => {
-      const li = document.createElement('li');
-      const btn = document.createElement('button');
-      btn.textContent = (s.title.length>40? s.title.slice(0,38)+'...' : s.title);
-      btn.addEventListener('click', ()=> showSlide(i));
-      li.appendChild(btn);
-      tocList.appendChild(li);
-    });
+            <div class="question-item">
+                <div class="question-header">
+                    <span class="question-number">Soal 6</span>
+                    <span class="question-type">Pilihan Ganda</span>
+                </div>
+                <div class="indicator">
+                    <strong>Indikator:</strong> Memahami ketentuan pelaksanaan akikah
+                </div>
+                <div class="material-detail">
+                    <h4>Materi yang Diujikan:</h4>
+                    <ul>
+                        <li>Pengertian akikah sebagai rasa syukur atas kelahiran</li>
+                        <li>Jumlah hewan untuk anak laki-laki/perempuan</li>
+                        <li>Waktu pelaksanaan yang disunnahkan</li>
+                        <li>Hukum akikah (sunnah muakkad)</li>
+                    </ul>
+                    <div class="key-concepts">
+                        <strong>Konsep Kunci:</strong> 2 kambing untuk laki-laki, 1 kambing untuk perempuan, hari ke-7, menggunting rambut
+                    </div>
+                </div>
+            </div>
 
-    // stage
-    const slideRoot = document.getElementById('slideRoot');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const printBtn = document.getElementById('printBtn');
-    const idxEl = document.getElementById('idx');
-    const totalEl = document.getElementById('total');
+            <div class="question-item">
+                <div class="question-header">
+                    <span class="question-number">Soal 7</span>
+                    <span class="question-type">Pilihan Ganda</span>
+                </div>
+                <div class="indicator">
+                    <strong>Indikator:</strong> Memahami makna filosofis akikah
+                </div>
+                <div class="material-detail">
+                    <h4>Materi yang Diujikan:</h4>
+                    <ul>
+                        <li>Makna spiritual: pengislaman anak, penyucian jiwa</li>
+                        <li>Ekspresi syukur kepada Allah</li>
+                        <li>Perlindungan dari gangguan setan</li>
+                        <li>Pemberian nama yang baik</li>
+                    </ul>
+                    <div class="key-concepts">
+                        <strong>Konsep Kunci:</strong> Syukur, tabarrukan, nazhar, nama Islami
+                    </div>
+                </div>
+            </div>
 
-    let index = 0;
-    totalEl.textContent = slides.length;
+            <div class="question-item">
+                <div class="question-header">
+                    <span class="question-number">Soal 8</span>
+                    <span class="question-type">Pilihan Ganda</span>
+                </div>
+                <div class="indicator">
+                    <strong>Indikator:</strong> Memahami dalil-dalil tentang kurban dan akikah
+                </div>
+                <div class="material-detail">
+                    <h4>Materi yang Diujikan:</h4>
+                    <ul>
+                        <li>Dalil qur'ani tentang kurban (QS. Al-Kautsar, Al-Hajj)</li>
+                        <li>Hadits Nabi tentang kurban dan akikah</li>
+                        <li>Perintah N Ibrahim AS dalam melaksanakan kurban</li>
+                        <li>Ijmak ulama tentang keutamaan kedua ibadah ini</li>
+                    </ul>
+                    <div class="key-concepts">
+                        <strong>Konsep Kunci:</strong> QS. 108:2, QS. 22:34-37, Hadits Bukhari
+                    </div>
+                </div>
+            </div>
 
-    function render(s){
-      slideRoot.innerHTML = `
-        <h1>${escapeHtml(s.title)}</h1>
-        <h3 class="muted">${escapeHtml(s.subtitle || '')}</h3>
-        <div class="content">${s.body}</div>
-      `;
-      idxEl.textContent = index+1;
-      // accessibility: focus
-      slideRoot.focus();
-    }
+            <div class="question-item">
+                <div class="question-header">
+                    <span class="question-number">Soal 9</span>
+                    <span class="question-type">Pilihan Ganda</span>
+                </div>
+                <div class="indicator">
+                    <strong>Indikator:</strong> Memahami tata cara penyembelihan yang syar'i
+                </div>
+                <div class="material-detail">
+                    <h4>Materi yang Diujikan:</h4>
+                    <ul>
+                        <li>Syarat penyembelih: Muslim, baligh, berakal</li>
+                        <li>Teknik penyembelihan: tajam, tenggorokan, tidak memotong tulang belakang</li>
+                        <li>Menyebut nama Allah saat menyembelih</li>
+                        <li>Kehalalan hewan yang disembelih</li>
+                    </ul>
+                    <div class="key-concepts">
+                        <strong>Konsep Kunci:</strong> Al-Qurthubi, tajdid niyyah, zabiha, tasmiyyah
+                    </div>
+                </div>
+            </div>
 
-    function showSlide(i){
-      if(i < 0) i = 0;
-      if(i > slides.length-1) i = slides.length-1;
-      index = i;
-      render(slides[i]);
-      // smooth scroll to top
-      window.scrollTo({top:0,behavior:'smooth'});
-    }
+            <div class="question-item">
+                <div class="question-header">
+                    <span class="question-number">Soal 26</span>
+                    <span class="question-type">Isian Singkat</span>
+                </div>
+                <div class="indicator">
+                    <strong>Indikator:</strong> Menjelaskan makna taqarrub dalam konteks kurban
+                </div>
+                <div class="material-detail">
+                    <h4>Materi yang Diujikan:</h4>
+                    <ul>
+                        <li>Filsafat berqurban: mendekatkan diri kepada Allah SWT</li>
+                        <li>Manifestasi ketundukan total kepada Allah</li>
+                        <li>Pengorbanan harta untuk kepentingan sosial</li>
+                        <li>Membentuk kepribadian dermawan</li>
+                    </ul>
+                    <div class="key-concepts">
+                        <strong>Jawaban yang Diharapkan:</strong> "Mendekatkan diri kepada Allah melalui pengorbanan"
+                    </div>
+                </div>
+            </div>
 
-    prevBtn.addEventListener('click', ()=> showSlide(index-1));
-    nextBtn.addEventListener('click', ()=> showSlide(index+1));
-    printBtn.addEventListener('click', ()=> window.print());
+            <div class="question-item">
+                <div class="question-header">
+                    <span class="question-number">Soal 27</span>
+                    <span class="question-type">Isian Singkat</span>
+                </div>
+                <div class="indicator">
+                    <strong>Indikator:</strong> Menyebutkan syarat hewan kurban yang sah
+                </div>
+                <div class="material-detail">
+                    <h4>Materi yang Diujikan:</h4>
+                    <ul>
+                        <li>Jenis hewan yang disyariatkan: unta, sapi, kerbau, kambing, domba</li>
+                        <li>Umur minimal masing-masing hewan</li>
+                        <li>Kondisi fisik: sehat, tidak cacat, tidak kurus kurus</li>
+                        <li>Tidak hilang bagian tubuh penting</li>
+                    </ul>
+                    <div class="key-concepts">
+                        <strong>Jawaban yang Diharapkan:</strong> "Sehat, tidak cacat, mencapai umur syar'i"
+                    </div>
+                </div>
+            </div>
 
-    // keyboard nav
-    document.addEventListener('keydown', (e)=>{
-      if(e.key === 'ArrowLeft') showSlide(index-1);
-      if(e.key === 'ArrowRight') showSlide(index+1);
-    });
+            <!-- Bagian 2: Zakat -->
+            <div class="section-header">
+                💰 MATERI ZAKAT (Soal 10-18, 31-33)
+            </div>
 
-    // escape html in title/subtitle
-    function escapeHtml(text){
-      if(!text) return '';
-      return text.replace(/[&<>"']/g, (m)=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m]));
-    }
+            <div class="question-item">
+                <div class="question-header">
+                    <span class="question-number">Soal 10</span>
+                    <span class="question-type">Pilihan Ganda</span>
+                </div>
+                <div class="indicator">
+                    <strong>Indikator:</strong> Memahami definisi dan hukum zakat
+                </div>
+                <div class="material-detail">
+                    <h4>Materi yang Diujikan:</h4>
+                    <ul>
+                        <li>Pengertian zakat secara bahasa dan istilah</li>
+                        <li>Hukum zakat fitrah (wajib) dan zakat mal (wajib)</li>
+                        <li>Perbedaan zakat, sedekah, dan infak</li>
+                        <li>Dalil wajibnya zakat (QS. Al-Baqarah: 43, 110)</li>
+                    </ul>
+                    <div class="key-concepts">
+                        <strong>Konsep Kunci:</strong> Rukun Islam, harta yang wajib dizakati, nisab, haul
+                    </div>
+                </div>
+            </div>
 
-    // init
-    showSlide(0);
-  </script>
-</body>
-</html>
+            <div class="question-item">
+                <div class="question-header">
+                    <span class="question-number">Soal 11</span>
+                    <span class="question-type">Pilihan Ganda</span>
+                </div>
+                <div class="indicator">
+     
