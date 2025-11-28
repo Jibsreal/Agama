@@ -1,356 +1,399 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<title>Materi Pembelajaran Qur'ani 1–35</title>
-<style>
-    body {
-        margin: 0; padding: 0;
-        font-family: Arial, sans-serif;
-        background: #f4f4f4;
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Buku Ringkas PAI Kelas IX — Slides</title>
+  <style>
+    :root{
+      --bg:#f7f9fc;
+      --card:#ffffff;
+      --accent:#0b5cff;
+      --muted:#6b7280;
+      --glass: rgba(11,92,255,0.06);
+      --maxw:1000px;
+      --pad:24px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
-    .slide {
-        display: none;
-        padding: 50px;
-        background: white;
-        height: 100vh;
-        overflow-y: auto;
+    html,body{height:100%;margin:0;background:var(--bg);color:#111;}
+    .app{
+      display:flex;
+      gap:16px;
+      max-width:1200px;
+      margin:28px auto;
+      padding:16px;
     }
-    .active {
-        display: block;
+    /* Sidebar / toc */
+    .toc{
+      width:260px;
+      background:linear-gradient(180deg,var(--card),#fbfdff);
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(12,40,80,0.06);
+      padding:16px;
+      position:sticky;
+      top:24px;
+      height: calc(100vh - 48px);
+      overflow:auto;
     }
-    h1, h2 {
-        margin-top: 0;
-        color: #333;
+    .toc h2{margin:0 0 8px 0;font-size:18px;}
+    .toc p{margin:0 0 12px 0;color:var(--muted);font-size:13px;}
+    .toc ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;}
+    .toc li button{
+      text-align:left;border:0;background:transparent;padding:8px;border-radius:8px;cursor:pointer;font-size:14px;color:#0b1236;
     }
-    blockquote {
-        background: #eef;
-        padding: 15px;
-        border-left: 5px solid #77f;
-        margin: 20px 0;
+    .toc li button:hover{background:var(--glass);}
+    .toc .meta{font-size:12px;color:var(--muted);margin-top:12px;}
+
+    /* Slide area */
+    .stage{
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
     }
-    .nav {
-        position: fixed;
-        bottom: 20px;
-        left: 0; right: 0;
-        text-align: center;
+    .slide{
+      background:var(--card);
+      border-radius:12px;
+      padding:28px;
+      min-height:520px;
+      box-shadow:0 18px 40px rgba(12,40,80,0.06);
+      position:relative;
     }
-    button {
-        padding: 10px 20px;
-        margin: 5px;
+    .slide h1{font-size:20px;margin:0 0 8px 0;color:var(--accent);}
+    .slide h3{margin:0 0 6px 0;color:#123;}
+    .muted{color:var(--muted);font-size:13px;}
+    .verse{
+      background:#fbfdff;padding:12px;border-left:4px solid var(--accent);border-radius:6px;margin:12px 0;font-size:15px;
     }
-</style>
+    .verse .arab{font-family: "Scheherazade New", "Amiri", serif;font-size:20px;direction:rtl;text-align:right;}
+    .controls{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .nav{
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+    button.btn{
+      border:0;padding:10px 12px;border-radius:10px;background:var(--accent);color:white;cursor:pointer;font-weight:600;
+      box-shadow:0 6px 14px rgba(11,92,255,0.12);
+    }
+    button.ghost{
+      background:transparent;color:var(--accent);border:1px solid var(--glass);box-shadow:none;
+    }
+    .progress{font-size:13px;color:var(--muted)}
+    /* small notes */
+    .note{background:#fff7e6;padding:10px;border-radius:8px;border-left:4px solid #ffb020;color:#6b4b00;margin-top:8px}
+    /* content */
+    .content p{line-height:1.6;margin:8px 0;color:#1b2430}
+    .two-col{display:flex;gap:18px}
+    .col{flex:1}
+    .footer{
+      display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:13px;color:var(--muted)
+    }
+
+    /* responsive */
+    @media (max-width:900px){
+      .app{flex-direction:column;padding:12px}
+      .toc{width:100%;height:auto;position:relative;order:2}
+    }
+
+    /* print-friendly */
+    @media print{
+      body{background:white}
+      .toc, .controls, button{display:none !important}
+      .slide{box-shadow:none;border-radius:0;padding:12px;min-height:unset}
+    }
+  </style>
 </head>
 <body>
+  <div class="app">
+    <aside class="toc" aria-label="Daftar Isi">
+      <h2>Buku Ringkas PAI — Kelas IX</h2>
+      <p class="muted">Kurikulum Merdeka — Materi ringkas, ayat & arti</p>
+      <ul id="tocList"></ul>
+      <div class="meta">
+        <div><strong>Isi:</strong> Kurban & Akikah • Zakat • Penaklukan Konstantinopel</div>
+        <div style="margin-top:8px;font-size:12px;color:var(--muted)">Gunakan ← → atau tombol di bawah untuk navigasi.</div>
+      </div>
+    </aside>
 
-<!-- ================================ -->
-<!-- SLIDE 1 -->
-<section class="slide active">
-    <h1>1. Pembukaan Pembelajaran Qur'ani</h1>
-    <p>
-        Materi ini merangkum 35 topik Al-Qur’an tentang penciptaan, fenomena alam,
-        manusia, sejarah, dan nilai-nilai inti. Setiap slide berisi potongan ayat,
-        terjemahan, makna mendalam, dan inti pembahasannya.
-    </p>
-</section>
+    <main class="stage">
+      <div class="slide" id="slideRoot" role="region" aria-live="polite">
+        <!-- slide content injected via JS -->
+      </div>
 
-<!-- ================================ -->
-<!-- SLIDE 2 -->
-<section class="slide">
-    <h2>2. Surah Al-Fātiḥah</h2>
-    <blockquote>
-        "Segala puji bagi Allah, Tuhan seluruh alam." (QS. 1:2)
-    </blockquote>
-    <p><strong>Makna:</strong> Mengarahkan hati kepada Tuhan sebagai sumber segala hukum dan rahmat.</p>
-    <p><strong>Inti:</strong> Doa petunjuk—jalan lurus.</p>
-</section>
+      <div class="controls">
+        <div class="nav">
+          <button class="btn" id="prevBtn" title="Sebelumnya">← Sebelumnya</button>
+          <button class="btn" id="nextBtn" title="Berikutnya">Berikutnya →</button>
+          <button class="ghost" id="printBtn" title="Cetak / Simpan PDF">Cetak / Simpan PDF</button>
+        </div>
+        <div class="progress" id="progress">Slide <span id="idx">1</span> / <span id="total">1</span></div>
+      </div>
 
-<!-- SLIDE 3 -->
-<section class="slide">
-    <h2>3. Surah Al-Baqarah</h2>
-    <blockquote>"Kitab ini tidak ada keraguan di dalamnya, petunjuk bagi orang bertakwa." (QS. 2:2)</blockquote>
-    <p><strong>Makna:</strong> Fondasi syariat: ibadah, moral, hukum sosial.</p>
-    <p><strong>Inti:</strong> Identitas umat berilmu dan beramal.</p>
-</section>
+      <div class="footer">
+        <div class="muted">Buku Ringkas — PAI Kelas IX • 2025/2026</div>
+        <div class="muted">Sumber: Al-Qur'an, Hadis, Buku PAI Kemenag, Sejarah Utsmani</div>
+      </div>
+    </main>
+  </div>
 
-<!-- SLIDE 4 -->
-<section class="slide">
-    <h2>4. Surah Ali Imran</h2>
-    <blockquote>"Sesungguhnya dalam penciptaan langit dan bumi terdapat tanda." (QS. 3:190)</blockquote>
-    <p><strong>Makna:</strong> Alam sebagai kitab terbuka yang menguatkan iman.</p>
-    <p><strong>Inti:</strong> Keteguhan identitas umat.</p>
-</section>
+  <script>
+    // Slide data (ringkasan dari buku ringkas; setiap objek = 1 slide/page)
+    const slides = [
+      {
+        id: 'cover',
+        title: 'BUKU RINGKAS SISWA — PAI KELAS IX',
+        subtitle: 'Kurikulum Merdeka | Tahun Ajaran 2025/2026',
+        body: `<p class="muted">Ringkasan materi: Kurban & Akikah, Zakat, Peradaban Turki Utsmani — Penaklukan Konstantinopel.</p>
+               <p>Gunakan menu sebelah untuk melompat ke materi. Slide ini adalah pengantar dan panduan ringkas.</p>`
+      },
 
-<!-- SLIDE 5 -->
-<section class="slide">
-    <h2>5. Surah An-Nisa’</h2>
-    <blockquote>"Allah menciptakan kamu dari satu jiwa (nafs wahidah)." (QS. 4:1)</blockquote>
-    <p><strong>Makna:</strong> Kesetaraan manusia.</p>
-    <p><strong>Inti:</strong> Hukum sosial dan keadilan.</p>
-</section>
+      /* BAB 1 Kurban & Akikah - slides 2.. */
+      {
+        id:'k1',
+        title:'BAB 1 — Kurban & Akikah',
+        subtitle:'Makna Kurban',
+        body:`<div class="content"><p><strong>Makna:</strong> Kurban adalah ibadah penyembelihan hewan sebagai bentuk kedekatan dan ketaatan kepada Allah. Ibadah ini melatih keikhlasan, empati, dan semangat berbagi.</p>
+              <p class="muted">Pembelajaran: diskusikan mengapa simbol pengorbanan membangun solidaritas sosial.</p></div>`
+      },
+      {
+        id:'k2',
+        title:'Dalil Kurban — Al-Hajj',
+        subtitle:'Surah Al-Hajj (potongan ayat)',
+        body:`<div class="verse">
+                <div class="arab" lang="ar">وَلِكُلِّ أُمَّةٍ جَعَلْنَا مَـنَسَكًا لِّيَذْكُرُوا اسْمَ اللَّهِ عَلَى مَا رَزَقَهُمْ</div>
+                <div class="muted">Al-Hajj : ayat 34 (terjemahan sebagian)</div>
+                <p><em>Arti singkat:</em> "Dan bagi setiap umat telah Kami syariatkan penyembelihan (kurban), supaya mereka menyebut nama Allah..."</p>
+                <p class="muted">Makna ayat: kurban sebagai ibadah berkelanjutan yang menghubungkan manusia dengan Tuhan melalui rasa syukur.</p>
+              </div>
+              <div class="verse" style="margin-top:12px">
+                <p><strong>Al-Hajj ayat 37 (terjemahan):</strong></p>
+                <p>"Daging dan darah hewan kurban itu tidak sampai kepada Allah, tetapi ketakwaanmulah yang sampai kepada-Nya."</p>
+                <p class="muted">Inti: nilai ibadah terletak pada ketakwaan, bukan sekedar sisi fisik.</p>
+              </div>`
+      },
+      {
+        id:'k3',
+        title:'Hukum & Waktu Kurban',
+        subtitle:'Hukum dan pelaksanaan',
+        body:`<div class="content">
+                <p><strong>Hukum:</strong> Mayoritas ulama menempatkan kurban sebagai <em>sunnah muakkad</em> (sunnah yang sangat dianjurkan). Ada perbedaan minor dalam ijtihad ulama, diskusikan konteks kemampuan sosial ekonomi.</p>
+                <p><strong>Waktu penyembelihan:</strong> Setelah Salat Idul Adha sampai tanggal 13 Dzulhijjah.</p>
+               </div>`
+      },
+      {
+        id:'k4',
+        title:'Persamaan & Perbedaan: Kurban vs Akikah',
+        subtitle:'Kapan & mengapa',
+        body:`<div class="content">
+                <p>Keduanya melibatkan penyembelihan hewan namun konteks berbeda:</p>
+                <ul>
+                  <li><strong>Kurban:</strong> Dilakukan pada Idul Adha, bersifat syiar keagamaan dan kepedulian sosial.</li>
+                  <li><strong>Akikah:</strong> Dilakukan pada hari ke-7 kelahiran anak sebagai rasa syukur dan doa keselamatan.</li>
+                </ul>
+                <p class="muted">Pelajari hadis terkait akikah: "Setiap anak tergadai oleh akikahnya..." (HR. Abu Dawud).</p>
+               </div>`
+      },
+      {
+        id:'k5',
+        title:'Praktik Penyembelihan & Pembagian',
+        subtitle:'Adab dan distribusi',
+        body:`<div class="content">
+                <p><strong>Adab:</strong> Hewan diarahkan ke kiblat; penyembelih membaca basmalah dan takbir; menyembelih dengan cara yang membuat hewan menderita seminimal mungkin.</p>
+                <p><strong>Pembagian daging:</strong> Umumnya dibagi untuk: keluarga, kerabat, dan masyarakat yang membutuhkan.</p>
+               </div>`
+      },
 
-<!-- SLIDE 6 -->
-<section class="slide">
-    <h2>6. Surah Al-Ma'idah</h2>
-    <blockquote>"Allah menghendaki kemudahan bagimu." (QS. 5:6)</blockquote>
-    <p><strong>Makna:</strong> Syariat datang untuk memudahkan, bukan memberatkan.</p>
-    <p><strong>Inti:</strong> Etika halal–haram.</p>
-</section>
+      /* BAB 2 Zakat */
+      {
+        id:'z1',
+        title:'BAB 2 — Zakat',
+        subtitle:'Makna & jenis',
+        body:`<div class="content">
+                <p><strong>Makna:</strong> Zakat berarti "membersihkan" — harta dan jiwa. Ia berfungsi sebagai mekanisme kesejahteraan dan redistribusi sosial.</p>
+                <p><strong>Jenis:</strong> Zakat mal, zakat fitrah, zakat profesi (kontemporer), dan jenis lain melalui ijtihad.</p>
+               </div>`
+      },
+      {
+        id:'z2',
+        title:'Dalil Zakat',
+        subtitle:'At-Taubah ayat 103 & 60',
+        body:`<div class="verse">
+                <p><strong>At-Taubah ayat 103 (terjemahan):</strong></p>
+                <p>"Ambillah zakat dari harta mereka untuk membersihkan dan menyucikan mereka."</p>
+                <p class="muted">Inti: zakat punya fungsi moral dan sosial.</p>
+               </div>
+               <div class="verse" style="margin-top:10px">
+                <p><strong>At-Taubah ayat 60 (terjemahan):</strong></p>
+                <p>"Sungguh zakat itu hanya untuk orang fakir, miskin, amil, muallaf, memerdekakan budak, orang berutang, di jalan Allah, dan ibnu sabil."</p>
+                <p class="muted">Inti: pembagian zakat ditentukan secara jelas untuk efektivitas sosial.</p>
+               </div>`
+      },
+      {
+        id:'z3',
+        title:'Zakat Fitrah & Zakat Mal',
+        subtitle:'Perbedaan dan praktik',
+        body:`<div class="content">
+                <p><strong>Zakat Fitrah:</strong> Dikeluarkan pada akhir Ramadan sebelum Salat Id; biasanya berupa bahan pokok (mis. beras ~2.5 kg) atau senilai uang.</p>
+                <p><strong>Zakat Mal:</strong> Mencakup emas, perak, perdagangan, pertanian, peternakan, dan penghasilan tertentu. Perhitungannya melibatkan nishab dan haul.</p>
+               </div>`
+      },
+      {
+        id:'z4',
+        title:'Istilah Penting Zakat',
+        subtitle:'Nishab • Haul • Mustahik',
+        body:`<div class="content">
+                <ul>
+                  <li><strong>Nishab:</strong> Batas minimal harta yang harus dizakati.</li>
+                  <li><strong>Haul:</strong> Masa kepemilikan selama 1 tahun penuh.</li>
+                  <li><strong>Mustahik:</strong> Penerima zakat (kategori di ayat At-Taubah 60).</li>
+                </ul>
+                <p class="muted">Studi kasus: Diskusikan bagaimana zakat dapat dimodelkan untuk mengatasi kemiskinan lokal.</p>
+               </div>`
+      },
 
-<!-- SLIDE 7 -->
-<section class="slide">
-    <h2>7. Surah Al-An’am</h2>
-    <blockquote>"Dialah yang menjadikan malam untuk kamu beristirahat." (QS. 6:96)</blockquote>
-    <p><strong>Makna:</strong> Ritme kosmik dipasang untuk keseimbangan hidup.</p>
-    <p><strong>Inti:</strong> Tauhid dan pengamatan alam.</p>
-</section>
+      /* BAB 3 Peradaban Utsmani */
+      {
+        id:'u1',
+        title:'BAB 3 — Peradaban Turki Utsmani',
+        subtitle:'Penaklukan Konstantinopel (1453)',
+        body:`<div class="content">
+                <p>Penaklukan Konstantinopel (29 Mei 1453) oleh Muhammad Al-Fatih merupakan peristiwa yang mengubah jalur perdagangan, tatanan politik, dan sejarah Eropa-Asia.</p>
+                <p class="muted">Pelajari dari sisi strategi, teknologi, dan kepemimpinan.</p>
+               </div>`
+      },
+      {
+        id:'u2',
+        title:'Biografi Singkat Muhammad Al-Fatih',
+        subtitle:'Sifat dan pendidikan',
+        body:`<div class="content">
+                <p><strong>Nama:</strong> Muhammad II (Al-Fatih). Lahir 1432, menaklukkan Konstantinopel pada usia 21.</p>
+                <p><strong>Sifat:</strong> disiplin, cerdas, adil, rendah hati. <strong>Guru utama:</strong> Syekh Aq Syamsuddin.</p>
+               </div>`
+      },
+      {
+        id:'u3',
+        title:'Ayat & Hadis yang relevan',
+        subtitle:'Motivasi spiritual dan moral',
+        body:`<div class="verse">
+                <p><strong>Al-Baqarah 249 (terjemahan):</strong></p>
+                <p>"Berapa banyak kelompok kecil yang mengalahkan kelompok besar dengan izin Allah."</p>
+                <p class="muted">Makna: kemenangan bukan semata jumlah, tapi izin dan strategi.</p>
+               </div>
+               <div class="note">Hadis: "Konstantinopel pasti akan ditaklukkan..." (HR. Ahmad) — digunakan dalam tradisi sejarah sebagai motivasi moral.</div>`
+      },
+      {
+        id:'u4',
+        title:'Strategi Penaklukan',
+        subtitle:'Teknologi & taktik',
+        body:`<div class="content">
+                <ul>
+                  <li>Penggunaan meriam besar (Urban) yang mampu merusak tembok kota.</li>
+                  <li>Inovasi taktis: memindahkan kapal melewati jalur darat untuk mengejutkan pihak musuh.</li>
+                  <li>Disiplin pasukan (Janissary) dan perencanaan pengepungan selama 53 hari.</li>
+                </ul>
+               </div>`
+      },
+      {
+        id:'u5',
+        title:'Akhlak Al-Fatih & Kebijakan Pasca-Menang',
+        subtitle:'Toleransi dan administrasi',
+        body:`<div class="content">
+                <p>Setelah penaklukan, Al-Fatih menerapkan kebijakan yang relatif toleran: menjamin kebebasan beragama bagi penduduk dan memanfaatkan tenaga administratif lokal.</p>
+                <p class="muted">Pelajaran: kepemimpinan efektif melibatkan kehati-hatian, integrasi, dan pembinaan stabilitas pascaperang.</p>
+               </div>`
+      },
 
-<!-- SLIDE 8 -->
-<section class="slide">
-    <h2>8. Surah Al-A’raf</h2>
-    <blockquote>"Timbangan pada hari itu adalah kebenaran." (QS. 7:8)</blockquote>
-    <p><strong>Makna:</strong> Hidup penuh konsekuensi moral.</p>
-    <p><strong>Inti:</strong> Kisah umat terdahulu.</p>
-</section>
+      /* BAB 4 Studi Kasus */
+      {
+        id:'s1',
+        title:'BAB 4 — Studi Kasus & Refleksi',
+        subtitle:'Zakat dan Penyebaran Islam',
+        body:`<div class="content">
+                <p><strong>Peran Zakat:</strong> pembiayaan pendidikan, kesehatan, pemberdayaan ekonomi, pengentasan kemiskinan.</p>
+                <p><strong>Penyebaran Islam ke Nusantara:</strong> melalui perdagangan, dakwah Wali Songo, dan jalur kebudayaan — bukti antara lain nisan kuno dan catatan asing.</p>
+               </div>`
+      },
+      {
+        id:'end',
+        title:'Penutup & Aktivitas Belajar',
+        subtitle:'Tugas & saran pembelajaran',
+        body:`<div class="content">
+                <ol>
+                  <li>Buat ringkasan: bandingkan kurban & akikah dalam 200 kata.</li>
+                  <li>Studi kasus: susun rencana distribusi daging kurban untuk satu desa (pertimbangkan keadilan dan logistik).</li>
+                  <li>Diskusi: Bagaimana zakat dapat ditransformasikan secara modern (mis. zakat digital) untuk pemberdayaan ekonomi?</li>
+                </ol>
+                <p class="muted">Sumber tambahan: Al-Qur'an, Hadis Shahih, Buku PAI Kemenag, Ensiklopedia sejarah Utsmani.</p>
+               </div>`
+      }
+    ];
 
-<!-- SLIDE 9 -->
-<section class="slide">
-    <h2>9. Surah Al-Anfal</h2>
-    <blockquote>"Kemenangan hanyalah dari Allah." (QS. 8:10)</blockquote>
-    <p><strong>Makna:</strong> Kemenangan tidak hanya strategi, tetapi spiritual.</p>
-    <p><strong>Inti:</strong> Prinsip peperangan adil.</p>
-</section>
+    // build TOC
+    const tocList = document.getElementById('tocList');
+    slides.forEach((s, i) => {
+      const li = document.createElement('li');
+      const btn = document.createElement('button');
+      btn.textContent = (s.title.length>40? s.title.slice(0,38)+'...' : s.title);
+      btn.addEventListener('click', ()=> showSlide(i));
+      li.appendChild(btn);
+      tocList.appendChild(li);
+    });
 
-<!-- SLIDE 10 -->
-<section class="slide">
-    <h2>10. Surah At-Taubah</h2>
-    <blockquote>"Jika kamu tidak menolongnya, Allah pasti menolongnya." (QS. 9:40)</blockquote>
-    <p><strong>Makna:</strong> Keteguhan dakwah meski tertekan.</p>
-    <p><strong>Inti:</strong> Loyalitas dan komitmen iman.</p>
-</section>
+    // stage
+    const slideRoot = document.getElementById('slideRoot');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const printBtn = document.getElementById('printBtn');
+    const idxEl = document.getElementById('idx');
+    const totalEl = document.getElementById('total');
 
-<!-- SLIDE 11 -->
-<section class="slide">
-    <h2>11. Surah Yunus</h2>
-    <blockquote>"Tanda-tanda bagi kaum yang berpikir." (QS. 10:6)</blockquote>
-    <p><strong>Makna:</strong> Alam sebagai ruang berpikir rasional.</p>
-    <p><strong>Inti:</strong> Kebenaran wahyu dan rasio.</p>
-</section>
+    let index = 0;
+    totalEl.textContent = slides.length;
 
-<!-- SLIDE 12 -->
-<section class="slide">
-    <h2>12. Surah Hud</h2>
-    <blockquote>"Tetaplah istiqamah." (QS. 11:112)</blockquote>
-    <p><strong>Makna:</strong> Keteguhan karakter.</p>
-    <p><strong>Inti:</strong> Kisah Nabi-Nabi.</p>
-</section>
+    function render(s){
+      slideRoot.innerHTML = `
+        <h1>${escapeHtml(s.title)}</h1>
+        <h3 class="muted">${escapeHtml(s.subtitle || '')}</h3>
+        <div class="content">${s.body}</div>
+      `;
+      idxEl.textContent = index+1;
+      // accessibility: focus
+      slideRoot.focus();
+    }
 
-<!-- SLIDE 13 -->
-<section class="slide">
-    <h2>13. Surah Yusuf</h2>
-    <blockquote>"Sesungguhnya bersama kesulitan ada kemudahan." (QS. 12:87)</blockquote>
-    <p><strong>Makna:</strong> Sabar sebagai strategi mental.</p>
-    <p><strong>Inti:</strong> Manajemen emosi & takdir.</p>
-</section>
+    function showSlide(i){
+      if(i < 0) i = 0;
+      if(i > slides.length-1) i = slides.length-1;
+      index = i;
+      render(slides[i]);
+      // smooth scroll to top
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
 
-<!-- SLIDE 14 -->
-<section class="slide">
-    <h2>14. Surah Ar-Ra’d</h2>
-    <blockquote>"Allah tidak mengubah keadaan suatu kaum hingga mereka mengubah dirinya." (QS. 13:11)</blockquote>
-    <p><strong>Makna:</strong> Reformasi diri.</p>
-    <p><strong>Inti:</strong> Hukum perubahan sosial.</p>
-</section>
+    prevBtn.addEventListener('click', ()=> showSlide(index-1));
+    nextBtn.addEventListener('click', ()=> showSlide(index+1));
+    printBtn.addEventListener('click', ()=> window.print());
 
-<!-- SLIDE 15 -->
-<section class="slide">
-    <h2>15. Surah Ibrahim</h2>
-    <blockquote>"Perumpamaan kalimat yang baik seperti pohon yang baik." (QS. 14:24)</blockquote>
-    <p><strong>Makna:</strong> Perkataan membangun peradaban.</p>
-    <p><strong>Inti:</strong> Syukur & keteguhan.</p>
-</section>
+    // keyboard nav
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'ArrowLeft') showSlide(index-1);
+      if(e.key === 'ArrowRight') showSlide(index+1);
+    });
 
-<!-- SLIDE 16 -->
-<section class="slide">
-    <h2>16. Surah An-Nahl</h2>
-    <blockquote>"Dari perut lebah keluar minuman… sebagai obat bagi manusia." (QS. 16:68–69)</blockquote>
-    <p><strong>Makna:</strong> Keajaiban biologis lebah.</p>
-    <p><strong>Inti:</strong> Nikmat Tuhan di alam.</p>
-</section>
+    // escape html in title/subtitle
+    function escapeHtml(text){
+      if(!text) return '';
+      return text.replace(/[&<>"']/g, (m)=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m]));
+    }
 
-<!-- SLIDE 17 -->
-<section class="slide">
-    <h2>17. Surah Al-Isra’</h2>
-    <blockquote>"Jangan berjalan di muka bumi dengan sombong." (QS. 17:37)</blockquote>
-    <p><strong>Makna:</strong> Kerendahan hati sebagai bentuk kecerdasan.</p>
-    <p><strong>Inti:</strong> Etika hidup.</p>
-</section>
-
-<!-- SLIDE 18 -->
-<section class="slide">
-    <h2>18. Surah Al-Kahfi</h2>
-    <blockquote>"Mereka bertahan dalam gua bertahun-tahun." (QS. 18:25)</blockquote>
-    <p><strong>Makna:</strong> Keteguhan iman generasi muda.</p>
-    <p><strong>Inti:</strong> Tiga ujian manusia: harta, ilmu, kekuasaan.</p>
-</section>
-
-<!-- SLIDE 19 -->
-<section class="slide">
-    <h2>19. Surah Maryam</h2>
-    <blockquote>"Kami mudahkan urusanmu." (QS. 19:26)</blockquote>
-    <p><strong>Makna:</strong> Penguatan hati para nabi.</p>
-    <p><strong>Inti:</strong> Kisah keluarga suci.</p>
-</section>
-
-<!-- SLIDE 20 -->
-<section class="slide">
-    <h2>20. Surah Taha</h2>
-    <blockquote>"Dan Aku telah memilihmu." (QS. 20:13)</blockquote>
-    <p><strong>Makna:</strong> Misi hidup setiap manusia.</p>
-    <p><strong>Inti:</strong> Musa sebagai arketipe perjuangan.</p>
-</section>
-
-<!-- SLIDE 21 -->
-<section class="slide">
-    <h2>21. Surah Al-Anbiya</h2>
-    <blockquote>"Langit dan bumi dahulu satu, lalu Kami pisahkan keduanya." (QS. 21:30)</blockquote>
-    <p><strong>Makna:</strong> Isyarat kosmologis penciptaan alam.</p>
-    <p><strong>Inti:</strong> Para nabi sebagai teladan.</p>
-</section>
-
-<!-- SLIDE 22 -->
-<section class="slide">
-    <h2>22. Surah Al-Hajj</h2>
-    <blockquote>"Sesungguhnya guncangan kiamat itu sangat dahsyat." (QS. 22:1)</blockquote>
-    <p><strong>Makna:</strong> Kesadaran akhir zaman.</p>
-    <p><strong>Inti:</strong> Makna haji & penyucian diri.</p>
-</section>
-
-<!-- SLIDE 23 -->
-<section class="slide">
-    <h2>23. Surah Al-Mu’minun</h2>
-    <blockquote>"Sungguh beruntung orang-orang beriman." (QS. 23:1)</blockquote>
-    <p><strong>Makna:</strong> Karakter manusia berkualitas.</p>
-    <p><strong>Inti:</strong> Evolusi penciptaan manusia.</p>
-</section>
-
-<!-- SLIDE 24 -->
-<section class="slide">
-    <h2>24. Surah An-Nur</h2>
-    <blockquote>"Allah adalah cahaya langit dan bumi." (QS. 24:35)</blockquote>
-    <p><strong>Makna:</strong> Cahaya sebagai metafora pengetahuan.</p>
-    <p><strong>Inti:</strong> Etika sosial & keluarga.</p>
-</section>
-
-<!-- SLIDE 25 -->
-<section class="slide">
-    <h2>25. Surah Al-Furqan</h2>
-    <blockquote>"Hamba Tuhan berjalan di bumi dengan rendah hati." (QS. 25:63)</blockquote>
-    <p><strong>Makna:</strong> Identitas hamba sejati.</p>
-    <p><strong>Inti:</strong> Kriteria manusia berkelas.</p>
-</section>
-
-<!-- SLIDE 26 -->
-<section class="slide">
-    <h2>26. Surah Asy-Syu’ara</h2>
-    <blockquote>"Penyair diikuti oleh orang-orang sesat." (QS. 26:224)</blockquote>
-    <p><strong>Makna:</strong> Kritisisme terhadap propaganda.</p>
-    <p><strong>Inti:</strong> Kisah dakwah para nabi.</p>
-</section>
-
-<!-- SLIDE 27 -->
-<section class="slide">
-    <h2>27. Surah An-Naml</h2>
-    <blockquote>"Seekor semut berkata: masuklah kalian ke dalam sarang." (QS. 27:18)</blockquote>
-    <p><strong>Makna:</strong> Organisasi sosial hewan sebagai tanda kecerdikan penciptaan.</p>
-    <p><strong>Inti:</strong> Hikmah Nabi Sulaiman.</p>
-</section>
-
-<!-- SLIDE 28 -->
-<section class="slide">
-    <h2>28. Surah Al-Qasas</h2>
-    <blockquote>"Kami hendak memberi kekuasaan kepada kaum yang tertindas." (QS. 28:5)</blockquote>
-    <p><strong>Makna:</strong> Siklus peradaban.</p>
-    <p><strong>Inti:</strong> Perjalanan Nabi Musa.</p>
-</section>
-
-<!-- SLIDE 29 -->
-<section class="slide">
-    <h2>29. Surah Ar-Rum</h2>
-    <blockquote>"Manusia diciptakan dalam keadaan lemah." (QS. 30:54)</blockquote>
-    <p><strong>Makna:</strong> Evolusi psikologis manusia.</p>
-    <p><strong>Inti:</strong> Tanda-tanda di alam.</p>
-</section>
-
-<!-- SLIDE 30 -->
-<section class="slide">
-    <h2>30. Surah Luqman</h2>
-    <blockquote>"Jika ada kebaikan seberat biji sawi, Allah mengetahuinya." (QS. 31:16)</blockquote>
-    <p><strong>Makna:</strong> Pendidikan karakter.</p>
-    <p><strong>Inti:</strong> Hikmah keluarga.</p>
-</section>
-
-<!-- SLIDE 31 -->
-<section class="slide">
-    <h2>31. Surah As-Sajdah</h2>
-    <blockquote>"Dia menciptakan segala sesuatu dengan sebaik-baiknya." (QS. 32:7)</blockquote>
-    <p><strong>Makna:</strong> Kerapihan desain alam.</p>
-    <p><strong>Inti:</strong> Kontemplasi penciptaan.</p>
-</section>
-
-<!-- SLIDE 32 -->
-<section class="slide">
-    <h2>32. Surah Yasin</h2>
-    <blockquote>"Matahari beredar pada garis edarnya." (QS. 36:38)</blockquote>
-    <p><strong>Makna:</strong> Fenomena orbit astronomi.</p>
-    <p><strong>Inti:</strong> Hati sebagai pusat spiritual.</p>
-</section>
-
-<!-- SLIDE 33 -->
-<section class="slide">
-    <h2>33. Surah Az-Zumar</h2>
-    <blockquote>"Apakah sama orang-orang yang mengetahui dan yang tidak mengetahui?" (QS. 39:9)</blockquote>
-    <p><strong>Makna:</strong> Nilai ilmu pengetahuan.</p>
-    <p><strong>Inti:</strong> Tauhid murni.</p>
-</section>
-
-<!-- SLIDE 34 -->
-<section class="slide">
-    <h2>34. Surah Al-Mulk</h2>
-    <blockquote>"Tidak kamu lihat pada ciptaan Tuhan sedikit pun ketidakseimbangan." (QS. 67:3)</blockquote>
-    <p><strong>Makna:</strong> Undangan mengkaji alam.</p>
-    <p><strong>Inti:</strong> Refleksi tentang kematian.</p>
-</section>
-
-<!-- SLIDE 35 -->
-<section class="slide">
-    <h2>35. Surah An-Nas & Kesimpulan</h2>
-    <blockquote>"Aku berlindung kepada Tuhan manusia." (QS. 114:1)</blockquote>
-    <p><strong>Makna:</strong> Pertarungan batin adalah ujian terbesar manusia.</p>
-    <p><strong>Inti:</strong> Kesadaran spiritual.</p>
-    <p><strong>Penutup:</strong> Al-Qur’an membentuk cara berpikir, merasakan, dan bertindak.</p>
-</section>
-
-
-<!-- ================================ -->
-<!-- NAVIGATION -->
-<div class="nav">
-    <button onclick="prevSlide()">◀ Sebelumnya</button>
-    <button onclick="nextSlide()">Berikutnya ▶</button>
-</div>
-
-<script>
-let current = 0;
-const slides = document.querySelectorAll('.slide');
-
-function show(n) {
-    slides[current].classList.remove('active');
-    current = (n + slides.length) % slides.length;
-    slides[current].classList.add('active');
-}
-
-function nextSlide() { show(current + 1); }
-function prevSlide() { show(current - 1); }
-</script>
-
+    // init
+    showSlide(0);
+  </script>
 </body>
 </html>
